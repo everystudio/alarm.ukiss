@@ -1,15 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AlarmMain : MonoBehaviour {
+public class AlarmMain : PageBase {
 
-	// Use this for initialization
-	void Start () {
-	
+	public override void Initialize ()
+	{
+		base.Initialize ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	public override void Close ()
+	{
+		base.Close ();
 	}
+
 }
+
+
+
+
+
+
+
+
+
+
+
