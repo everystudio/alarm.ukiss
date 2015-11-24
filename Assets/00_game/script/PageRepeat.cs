@@ -7,30 +7,31 @@ public class PageRepeat : OtherPage {
 	public UIGrid m_Grid;
 	public List<BannerRepeat> m_BannerRepeatList = new List<BannerRepeat>();
 
-	public string [] week = new string[7]{
-		"Monday",
-		"Tuesday",
-		"Wednesday",
-		"Thursday",
-		"Friday",
-		"Saturday",
-		"Sunday"
-	};
-
 	public override void Initialize ()
 	{
 		if (m_bInitialized == false) {
 			base.Initialize ();
 
-			for (int i = 0; i < week.Length; i++) {
+			for (int i = 0; i < DataManager.Instance.STR_WEEK_ARR.Length; i++) {
 				GameObject obj = PrefabManager.Instance.MakeObject ("prefab/BannerRepeat", m_Grid.gameObject);
 				obj.name = string.Format ("{0}", i);
 				BannerRepeat script = obj.GetComponent<BannerRepeat> ();
-				script.Initialize (week [i], false);
+				script.Initialize (DataManager.Instance.STR_WEEK_ARR [i], false , i );
 				m_BannerRepeatList.Add (script);
 			}
 			m_Grid.enabled = true;
 		}
+	}
+
+	public void InStart ( AlarmParam _param )
+	{
+		base.InStart ();
+
+		for (int i = 0; i < m_BannerRepeatList.Count; i++) {
+			bool bFlag = 0 < (_param.repeat_type & (1<<i));
+			m_BannerRepeatList [i].Initialize (DataManager.Instance.STR_WEEK_ARR [i], bFlag , i );
+		}
+
 	}
 
 	void Update(){

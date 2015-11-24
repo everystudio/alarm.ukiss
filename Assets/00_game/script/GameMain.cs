@@ -4,16 +4,75 @@ using System.Collections.Generic;
 
 public class GameMain : PageBase {
 
+	private static GameMain instance;
+	public static GameMain Instance {
+		get {
+			if (instance == null) {
+				GameObject obj = GameObject.Find ("GameMain");
+				if (obj == null) {
+					obj = new GameObject("GameMain");
+					//Debug.LogError ("Not Exist AtlasManager!!");
+				}
+				instance = obj.GetComponent<GameMain> ();
+				if (instance == null) {
+					//Debug.LogError ("Not Exist AtlasManager Script!!");
+					instance = obj.AddComponent<GameMain>() as GameMain;
+				}
+			}
+			return instance;
+		}
+	}
+
+	public AlarmParam EditingAlarmParam;
+	public AlarmData m_AlarmData = new AlarmData ();
+
 	public PageBase m_PageNow;
 	public List<PageBase> m_PageBaseList = new List<PageBase> ();
+
+
 
 	public PageFooter m_PageFooter;
 	public int m_iPagePre;
 
+	public TimeSet m_TimeSet;
+	public void TimeSetRefresh(){
+		m_TimeSet.DisplayReflresh ();
+	}
+
+
 	void Start(){
+		instance = this;
+		EditingAlarmParam = new AlarmParam ();
 		m_iPagePre = 0;
 		m_PageNow = m_PageBaseList [m_iPagePre];
 		InitPage (m_PageNow);
+
+		if (m_AlarmData == null) {
+			m_AlarmData = new AlarmData ();
+		}
+		m_AlarmData.Load (AlarmData.FILENAME);
+
+
+		/*
+		int iShift = 0;
+		iShift = iShift | (1 << 0);
+		iShift = iShift | (1 << 1);
+		Debug.Log (iShift);
+		//iShift = iShift | ~(1 << 1);
+		iShift &= ~(1 << 1);
+		iShift &= ~(1 << 1);
+		iShift &= ~(1 << 1);
+		iShift &= ~(1 << 1);
+		Debug.Log (iShift);
+	
+		Debug.Log (iShift &(1 << 0));
+		Debug.Log (iShift &(1 << 1));
+		Debug.Log (iShift &(1 << 2));
+		Debug.Log (iShift &(1 << 3));
+		*/
+
+
+
 	}
 
 	void Update(){
