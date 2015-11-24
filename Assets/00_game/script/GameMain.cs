@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class GameMain : PageBase {
 
@@ -39,8 +40,117 @@ public class GameMain : PageBase {
 		m_TimeSet.DisplayReflresh ();
 	}
 
+	public void timeRefreshFromToday(){
+
+		string strNow = TimeManager.StrNow ();
+		DateTime dateTime = TimeManager.GetNow ();
+		foreach( AlarmParam alarm in m_AlarmData.list ){
+			TimeSpan ts = TimeManager.Instance.GetDiff (strNow , alarm.time);
+			if (0 < ts.Seconds) {
+			} else {
+			}
+
+		}
+
+
+
+
+	}
+
+	public void reloadTime(AlarmParam _param){
+		if (_param.status == 0) {
+			return;
+		}
+
+
+
+
+	}
+
+	public AlarmParam GetNearParam(){
+
+		int iSerial = 0;
+
+		return new AlarmParam ();
+
+
+	}
+	public List<AlarmReserve> reserve_list = new List<AlarmReserve> ();
+
+	public void setupAlarmReserve( ref List<AlarmReserve> _insertList , List<AlarmParam> _alarmList ){
+
+		_insertList.Clear ();
+
+		DateTime datetimeNow = TimeManager.GetNow();
+		foreach (AlarmParam param in _alarmList) {
+			if (param.status == 0) {
+				continue;
+			}
+			//Debug.Log ( string.Format( "serial:{0} repeat_type:{1}",param.serial,  param.repeat_type));
+			if (param.repeat_type == 0) {
+				DateTime checkDate = TimeManager.Instance.MakeDateTime (param.time);
+				string strCheckDate = string.Format ("{0}-{1:D2}-{2:D2} {3:D2}:{4:D2}:00", datetimeNow.Year, datetimeNow.Month, datetimeNow.Day, checkDate.Hour, checkDate.Minute);
+				Debug.Log (TimeManager.Instance.GetDiffNow (strCheckDate).TotalSeconds);
+
+				TimeSpan time_span = TimeManager.Instance.GetDiffNow (strCheckDate);
+				AlarmReserve insert_data = new AlarmReserve ();
+				if (0 < time_span.TotalSeconds) {
+					insert_data.m_strTime = strCheckDate;
+				} else {
+					DateTime tomorrowDateTime = TimeManager.GetNow();
+					tomorrowDateTime = tomorrowDateTime.AddDays (1);
+
+					string strTomorrow = string.Format ("{0}-{1:D2}-{2:D2} {3:D2}:{4:D2}:00", tomorrowDateTime.Year, tomorrowDateTime.Month, tomorrowDateTime.Day, checkDate.Hour, checkDate.Minute);
+					insert_data.m_strTime = strTomorrow;
+				}
+				insert_data.m_iVoiceType = param.voice_type;
+				insert_data.m_lTime = (long)TimeManager.Instance.GetDiffNow (insert_data.m_strTime).TotalMinutes;
+				_insertList.Add (insert_data);
+			} else {
+				int iNowWeek = TimeManager.Instance.GetWeekIndex (TimeManager.StrGetTime ());
+				for (int i = 0; i < DataManager.Instance.STR_WEEK_ARR.Length; i++) {
+					if (0 < (param.repeat_type & (1<<i))) {
+						// 曜日にひっかかった
+						string strStartDate = "";
+						int iOffset = i - iNowWeek;
+						DateTime checkDate = TimeManager.Instance.MakeDateTime (param.time);
+						if (iOffset == 0) {
+							string strCheckDate = string.Format ("{0}-{1:D2}-{2:D2} {3:D2}:{4:D2}:00", datetimeNow.Year, datetimeNow.Month, datetimeNow.Day, checkDate.Hour, checkDate.Minute);
+							TimeSpan time_span = TimeManager.Instance.GetDiffNow (strCheckDate);
+							if (0 < time_span.TotalSeconds) {
+							} else {
+								iOffset = 7;
+							}
+						} else if (iOffset < 0) {
+							iOffset += DataManager.Instance.STR_WEEK_ARR.Length;
+						} else {
+							// そのまま
+						}
+						DateTime nextDateTime = TimeManager.GetNow();
+						nextDateTime = nextDateTime.AddDays (iOffset);
+
+						for (int count = 0; count < 10; count++) {
+							string strNext = string.Format ("{0}-{1:D2}-{2:D2} {3:D2}:{4:D2}:00", nextDateTime.Year, nextDateTime.Month, nextDateTime.Day, checkDate.Hour, checkDate.Minute);
+							strStartDate = strNext;
+							AlarmReserve insert_data = new AlarmReserve ();
+							insert_data.m_strTime = strNext;
+							insert_data.m_iVoiceType = param.voice_type;
+							insert_data.m_lTime = (long)TimeManager.Instance.GetDiffNow (insert_data.m_strTime).TotalMinutes;
+							_insertList.Add (insert_data);
+
+							// 次の準備
+							nextDateTime = nextDateTime.AddDays (7);
+						}
+					}
+				}
+			}
+			_insertList.Sort ((a, b) => (int)(a.m_lTime - b.m_lTime));
+		}
+		return;
+	}
 
 	void Start(){
+
 		instance = this;
 		EditingAlarmParam = new AlarmParam ();
 		m_iPagePre = 0;
@@ -51,6 +161,80 @@ public class GameMain : PageBase {
 			m_AlarmData = new AlarmData ();
 		}
 		m_AlarmData.Load (AlarmData.FILENAME);
+
+		setupAlarmReserve (ref reserve_list, m_AlarmData.list);
+		/*
+		reserve_list.Clear ();
+
+		DateTime datetimeNow = TimeManager.GetNow();
+		foreach (AlarmParam param in m_AlarmData.list) {
+			if (param.status == 0) {
+				continue;
+			}
+			Debug.Log ( string.Format( "serial:{0} repeat_type:{1}",param.serial,  param.repeat_type));
+			if (param.repeat_type == 0) {
+				DateTime checkDate = TimeManager.Instance.MakeDateTime (param.time);
+				string strCheckDate = string.Format ("{0}-{1:D2}-{2:D2} {3:D2}:{4:D2}:00", datetimeNow.Year, datetimeNow.Month, datetimeNow.Day, checkDate.Hour, checkDate.Minute);
+				Debug.Log (TimeManager.Instance.GetDiffNow (strCheckDate).TotalSeconds);
+
+				TimeSpan time_span = TimeManager.Instance.GetDiffNow (strCheckDate);
+				AlarmReserve insert_data = new AlarmReserve ();
+				if (0 < time_span.TotalSeconds) {
+					insert_data.m_strTime = strCheckDate;
+				} else {
+					DateTime tomorrowDateTime = TimeManager.GetNow();
+					tomorrowDateTime = tomorrowDateTime.AddDays (1);
+
+					string strTomorrow = string.Format ("{0}-{1:D2}-{2:D2} {3:D2}:{4:D2}:00", tomorrowDateTime.Year, tomorrowDateTime.Month, tomorrowDateTime.Day, checkDate.Hour, checkDate.Minute);
+					insert_data.m_strTime = strTomorrow;
+				}
+				insert_data.m_iVoiceType = param.voice_type;
+				insert_data.m_lTime = (long)TimeManager.Instance.GetDiffNow (insert_data.m_strTime).TotalMinutes;
+				reserve_list.Add (insert_data);
+			} else {
+
+				int iNowWeek = TimeManager.Instance.GetWeekIndex (TimeManager.StrGetTime ());
+				for (int i = 0; i < DataManager.Instance.STR_WEEK_ARR.Length; i++) {
+
+
+					if (0 < (param.repeat_type & (1<<i))) {
+						// 曜日にひっかかった
+						string strStartDate = "";
+						int iOffset = i - iNowWeek;
+						DateTime checkDate = TimeManager.Instance.MakeDateTime (param.time);
+						if (iOffset == 0) {
+							string strCheckDate = string.Format ("{0}-{1:D2}-{2:D2} {3:D2}:{4:D2}:00", datetimeNow.Year, datetimeNow.Month, datetimeNow.Day, checkDate.Hour, checkDate.Minute);
+							TimeSpan time_span = TimeManager.Instance.GetDiffNow (strCheckDate);
+							if (0 < time_span.TotalSeconds) {
+							} else {
+								iOffset = 7;
+							}
+						} else if (iOffset < 0) {
+							iOffset += DataManager.Instance.STR_WEEK_ARR.Length;
+						} else {
+							// そのまま
+						}
+						DateTime nextDateTime = TimeManager.GetNow();
+						nextDateTime = nextDateTime.AddDays (iOffset);
+
+						for (int count = 0; count < 10; count++) {
+							string strNext = string.Format ("{0}-{1:D2}-{2:D2} {3:D2}:{4:D2}:00", nextDateTime.Year, nextDateTime.Month, nextDateTime.Day, checkDate.Hour, checkDate.Minute);
+							strStartDate = strNext;
+							AlarmReserve insert_data = new AlarmReserve ();
+							insert_data.m_strTime = strNext;
+							insert_data.m_iVoiceType = param.voice_type;
+							insert_data.m_lTime = (long)TimeManager.Instance.GetDiffNow (insert_data.m_strTime).TotalMinutes;
+							reserve_list.Add (insert_data);
+
+							// 次の準備
+							nextDateTime = nextDateTime.AddDays (7);
+						}
+					}
+				}
+			}
+			reserve_list.Sort ((a, b) => (int)(a.m_lTime - b.m_lTime));
+		}
+		*/
 
 
 		/*

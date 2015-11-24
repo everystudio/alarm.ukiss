@@ -32,7 +32,6 @@ public class TimeSet : OtherPage {
 
 	public override void Initialize ()
 	{
-		Debug.LogError ("TimeSet.Initialize");
 		base.Initialize ();
 		m_TimeEdit.Initialize ();
 	}

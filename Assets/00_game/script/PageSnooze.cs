@@ -19,8 +19,6 @@ public class PageSnooze : OtherPage {
 
 			m_bmSnoozeType.ButtonRefresh (DataManager.Instance.STR_SNOOZE_ARR.Length);
 
-			Debug.Log (m_bmSnoozeType);
-
 			for (int i = 0; i < DataManager.Instance.STR_SNOOZE_ARR.Length; i++) {
 				GameObject obj = PrefabManager.Instance.MakeObject ("prefab/BannerSnooze", m_Grid.gameObject);
 				obj.name = string.Format ("{0}", i);

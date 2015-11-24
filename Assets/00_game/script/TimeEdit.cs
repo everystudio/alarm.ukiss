@@ -133,7 +133,7 @@ public class TimeEdit : OtherPage {
 				OutStart ();
 				// ここは保存
 				Debug.LogError (GameMain.Instance.EditingAlarmParam.serial);
-				GameMain.Instance.EditingAlarmParam.time = string.Format( "1982-10-10 {0}:{1}:00" , m_iHour , m_iMinute );
+				GameMain.Instance.EditingAlarmParam.time = string.Format( "1982-10-10 {0:D2}:{1:D2}:00" , m_iHour , m_iMinute );
 
 				GameMain.Instance.m_AlarmData.Load (AlarmData.FILENAME);
 				if (0 < GameMain.Instance.EditingAlarmParam.serial) {
