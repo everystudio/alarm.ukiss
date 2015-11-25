@@ -21,7 +21,7 @@ public class OtherPage : ButtonManager {
 		TweenPosition.Begin (gameObject, MOVE_TIME, Vector3.zero);
 	}
 
-	public void OutStart(){
+	virtual public void OutStart(){
 		TweenPosition.Begin (gameObject, MOVE_TIME, POS_OUT);
 	}
 }

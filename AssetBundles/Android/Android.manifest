@@ -1,0 +1,69 @@
+ManifestFileVersion: 0
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: assets/assetbundleresource/sprite/everystudio/school/tsukinaga_himeka_01.unity3d
+      Dependencies: {}
+    Info_1:
+      Name: assets/assetbundleresource/sprite/everystudio/school/harusaki_yusa_01.unity3d
+      Dependencies: {}
+    Info_2:
+      Name: assets/assetbundleresource/sprite/everystudio/school/kureha_ruri_01.unity3d
+      Dependencies: {}
+    Info_3:
+      Name: assets/assetbundleresource/sprite/everystudio/school/takira_itsuki_01.unity3d
+      Dependencies: {}
+    Info_4:
+      Name: assets/assetbundleresource/sprite/everystudio/school/tsukinaga_himeka_face.unity3d
+      Dependencies: {}
+    Info_5:
+      Name: assets/assetbundleresource/sprite/everystudio/school/mashino_kayo_01.unity3d
+      Dependencies: {}
+    Info_6:
+      Name: assets/assetbundleresource/sprite/everystudio/school/koya_chihiro_01.unity3d
+      Dependencies: {}
+    Info_7:
+      Name: assets/assetbundleresource/sprite/everystudio/school/harusaki_yusa_face.unity3d
+      Dependencies: {}
+    Info_8:
+      Name: assets/assetbundleresource/sprite/everystudio/school/amachi_emi_face.unity3d
+      Dependencies: {}
+    Info_9:
+      Name: assets/assetbundleresource/sprite/everystudio/school/sakuragawa_meina_face.unity3d
+      Dependencies: {}
+    Info_10:
+      Name: assets/assetbundleresource/sprite/everystudio/school/hoshina_saki_01.unity3d
+      Dependencies: {}
+    Info_11:
+      Name: assets/assetbundleresource/sprite/everystudio/school/kanashiro_ririko_face.unity3d
+      Dependencies: {}
+    Info_12:
+      Name: assets/assetbundleresource/sprite/everystudio/school/hoshina_saki_face.unity3d
+      Dependencies: {}
+    Info_13:
+      Name: assets/assetbundleresource/sprite/everystudio/school/kureha_ruri_face.unity3d
+      Dependencies: {}
+    Info_14:
+      Name: assets/assetbundleresource/sprite/everystudio/school/yuuki_shima_01.unity3d
+      Dependencies: {}
+    Info_15:
+      Name: assets/assetbundleresource/sprite/everystudio/school/takira_itsuki_face.unity3d
+      Dependencies: {}
+    Info_16:
+      Name: assets/assetbundleresource/sprite/everystudio/school/kanashiro_ririko_01.unity3d
+      Dependencies: {}
+    Info_17:
+      Name: assets/assetbundleresource/sprite/everystudio/school/yuuki_shima_face.unity3d
+      Dependencies: {}
+    Info_18:
+      Name: assets/assetbundleresource/sprite/everystudio/school/amachi_emi_01.unity3d
+      Dependencies: {}
+    Info_19:
+      Name: assets/assetbundleresource/sprite/everystudio/school/koya_chihiro_face.unity3d
+      Dependencies: {}
+    Info_20:
+      Name: assets/assetbundleresource/sprite/everystudio/school/mashino_kayo_face.unity3d
+      Dependencies: {}
+    Info_21:
+      Name: assets/assetbundleresource/sprite/everystudio/school/sakuragawa_meina_01.unity3d
+      Dependencies: {}

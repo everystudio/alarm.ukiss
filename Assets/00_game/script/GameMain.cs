@@ -24,8 +24,25 @@ public class GameMain : PageBase {
 		}
 	}
 
+	public AlarmMain m_AlarmMain;
 	public AlarmParam EditingAlarmParam;
 	public AlarmData m_AlarmData = new AlarmData ();
+
+	public KvsData kvs_data{
+		get{ 
+			if (m_KvsData == null) {
+
+				Debug.Log (m_KvsData);
+				Debug.LogError ("here");
+				m_KvsData = new KvsData ();
+
+				Debug.Log (m_KvsData);
+
+			}
+			return m_KvsData;
+		}
+	}
+	public KvsData m_KvsData;
 
 	public PageBase m_PageNow;
 	public List<PageBase> m_PageBaseList = new List<PageBase> ();
@@ -61,10 +78,6 @@ public class GameMain : PageBase {
 		if (_param.status == 0) {
 			return;
 		}
-
-
-
-
 	}
 
 	public AlarmParam GetNearParam(){
@@ -149,115 +162,30 @@ public class GameMain : PageBase {
 		return;
 	}
 
+
+
 	void Start(){
 
 		instance = this;
 		EditingAlarmParam = new AlarmParam ();
 		m_iPagePre = 0;
-		m_PageNow = m_PageBaseList [m_iPagePre];
-		InitPage (m_PageNow);
 
 		if (m_AlarmData == null) {
 			m_AlarmData = new AlarmData ();
 		}
 		m_AlarmData.Load (AlarmData.FILENAME);
-
 		setupAlarmReserve (ref reserve_list, m_AlarmData.list);
-		/*
-		reserve_list.Clear ();
-
-		DateTime datetimeNow = TimeManager.GetNow();
-		foreach (AlarmParam param in m_AlarmData.list) {
-			if (param.status == 0) {
-				continue;
-			}
-			Debug.Log ( string.Format( "serial:{0} repeat_type:{1}",param.serial,  param.repeat_type));
-			if (param.repeat_type == 0) {
-				DateTime checkDate = TimeManager.Instance.MakeDateTime (param.time);
-				string strCheckDate = string.Format ("{0}-{1:D2}-{2:D2} {3:D2}:{4:D2}:00", datetimeNow.Year, datetimeNow.Month, datetimeNow.Day, checkDate.Hour, checkDate.Minute);
-				Debug.Log (TimeManager.Instance.GetDiffNow (strCheckDate).TotalSeconds);
-
-				TimeSpan time_span = TimeManager.Instance.GetDiffNow (strCheckDate);
-				AlarmReserve insert_data = new AlarmReserve ();
-				if (0 < time_span.TotalSeconds) {
-					insert_data.m_strTime = strCheckDate;
-				} else {
-					DateTime tomorrowDateTime = TimeManager.GetNow();
-					tomorrowDateTime = tomorrowDateTime.AddDays (1);
-
-					string strTomorrow = string.Format ("{0}-{1:D2}-{2:D2} {3:D2}:{4:D2}:00", tomorrowDateTime.Year, tomorrowDateTime.Month, tomorrowDateTime.Day, checkDate.Hour, checkDate.Minute);
-					insert_data.m_strTime = strTomorrow;
-				}
-				insert_data.m_iVoiceType = param.voice_type;
-				insert_data.m_lTime = (long)TimeManager.Instance.GetDiffNow (insert_data.m_strTime).TotalMinutes;
-				reserve_list.Add (insert_data);
-			} else {
-
-				int iNowWeek = TimeManager.Instance.GetWeekIndex (TimeManager.StrGetTime ());
-				for (int i = 0; i < DataManager.Instance.STR_WEEK_ARR.Length; i++) {
-
-
-					if (0 < (param.repeat_type & (1<<i))) {
-						// 曜日にひっかかった
-						string strStartDate = "";
-						int iOffset = i - iNowWeek;
-						DateTime checkDate = TimeManager.Instance.MakeDateTime (param.time);
-						if (iOffset == 0) {
-							string strCheckDate = string.Format ("{0}-{1:D2}-{2:D2} {3:D2}:{4:D2}:00", datetimeNow.Year, datetimeNow.Month, datetimeNow.Day, checkDate.Hour, checkDate.Minute);
-							TimeSpan time_span = TimeManager.Instance.GetDiffNow (strCheckDate);
-							if (0 < time_span.TotalSeconds) {
-							} else {
-								iOffset = 7;
-							}
-						} else if (iOffset < 0) {
-							iOffset += DataManager.Instance.STR_WEEK_ARR.Length;
-						} else {
-							// そのまま
-						}
-						DateTime nextDateTime = TimeManager.GetNow();
-						nextDateTime = nextDateTime.AddDays (iOffset);
-
-						for (int count = 0; count < 10; count++) {
-							string strNext = string.Format ("{0}-{1:D2}-{2:D2} {3:D2}:{4:D2}:00", nextDateTime.Year, nextDateTime.Month, nextDateTime.Day, checkDate.Hour, checkDate.Minute);
-							strStartDate = strNext;
-							AlarmReserve insert_data = new AlarmReserve ();
-							insert_data.m_strTime = strNext;
-							insert_data.m_iVoiceType = param.voice_type;
-							insert_data.m_lTime = (long)TimeManager.Instance.GetDiffNow (insert_data.m_strTime).TotalMinutes;
-							reserve_list.Add (insert_data);
-
-							// 次の準備
-							nextDateTime = nextDateTime.AddDays (7);
-						}
-					}
-				}
-			}
-			reserve_list.Sort ((a, b) => (int)(a.m_lTime - b.m_lTime));
-		}
-		*/
-
-
-		/*
-		int iShift = 0;
-		iShift = iShift | (1 << 0);
-		iShift = iShift | (1 << 1);
-		Debug.Log (iShift);
-		//iShift = iShift | ~(1 << 1);
-		iShift &= ~(1 << 1);
-		iShift &= ~(1 << 1);
-		iShift &= ~(1 << 1);
-		iShift &= ~(1 << 1);
-		Debug.Log (iShift);
-	
-		Debug.Log (iShift &(1 << 0));
-		Debug.Log (iShift &(1 << 1));
-		Debug.Log (iShift &(1 << 2));
-		Debug.Log (iShift &(1 << 3));
-		*/
-
-
-
+		kvs_data.Load (KvsData.FILE_NAME);
+		int iTest = kvs_data.ReadInt ("test");
+		Debug.Log (iTest);
+		iTest += 1;
+		kvs_data.WriteInt ("test", iTest );
+		kvs_data.Save ();
+		m_PageNow = m_PageBaseList [m_iPagePre];
+		InitPage (m_PageNow);
 	}
+
+	public float m_fCheckIntervalTime;
 
 	void Update(){
 
@@ -271,6 +199,42 @@ public class GameMain : PageBase {
 			}
 			m_PageFooter.TriggerClearAll ();
 		}
+
+		List <AlarmReserve> remove_list = new List<AlarmReserve>();
+		m_fCheckIntervalTime += Time.deltaTime;
+		if (2.0f < m_fCheckIntervalTime) {
+			m_fCheckIntervalTime -= 2.0f;
+
+			List<int> remove_index_list = new List<int> ();
+			int iRemoveNum = 0;
+
+			int iCount = 0;
+			foreach (AlarmReserve reserve_param in reserve_list) {
+				bool bRemove = false;
+				if (TimeManager.Instance.GetDiffNow (reserve_param.m_strTime).TotalSeconds < 0 ) {
+					bRemove = true;
+					iRemoveNum += 1;
+				}
+				if (bRemove) {
+					remove_list.Add (reserve_param);
+				}
+			}
+
+			foreach( AlarmReserve remove_param in remove_list ){
+				reserve_list.Remove( remove_param );
+			}
+
+			if (0 < iRemoveNum) {
+				Debug.LogError ("remove");
+				m_AlarmMain.setNextTimer (reserve_list);
+			}
+
+
+		}
+
+
+
+
 	}
 
 	public void InitPage( PageBase _pageBase ){

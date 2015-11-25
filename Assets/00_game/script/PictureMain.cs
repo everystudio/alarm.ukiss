@@ -4,52 +4,118 @@ using System.Collections.Generic;
 
 public class PictureMain : PageBase {
 
-	public int m_iSelectingIndex;
+	public int m_iSelectingId;
 	public ButtonManager m_bmIconList;
 
-	public List<IconList> m_iconList = new List<IconList> ();
+	private List<IconList> m_iconList = new List<IconList> ();
 
 	public ImageCheck m_imageCheck;
 
-	public void IconSet( int _iSelectIndex ){
+	public UIGrid m_Grid;
+
+	public void IconSelect( int _iSelectIndex ){
 		foreach (IconList icon in m_iconList) {
-			icon.Initialize (icon.Index == _iSelectIndex);
+			icon.SetSelect (_iSelectIndex);
 		}
 		return;
 	}
 
 	// Use this for initialization
 	void Start () {
-		m_bmIconList.ButtonInit ();
+		m_bmIconList.ButtonRefresh (DataManager.master_image_list.Count);
 
-		m_iSelectingIndex = 0;
-		IconSet (m_iSelectingIndex);
+		m_iSelectingId = GameMain.Instance.kvs_data.ReadInt (DataManager.KEY_SELECTING_IMAGE_ID);
+
+		int iIndex = 0;
+
+		foreach (CsvImageData data in DataManager.master_image_list) {
+
+			GameObject obj = PrefabManager.Instance.MakeObject ("prefab/IconRoot", m_Grid.gameObject);
+			IconList script = obj.GetComponent<IconList> ();
+
+			script.Initialize (m_iSelectingId, iIndex , data);
+
+			m_iconList.Add (script);
+
+			m_bmIconList.AddButtonBase (iIndex, obj);
+
+			iIndex += 1;
+		}
+
+		IconSelect (m_iSelectingId);
+		m_bmIconList.TriggerClearAll ();
 
 		m_imageCheck.Initialize ();
+
+
 	}
-	
+
+	public enum STEP{
+		NONE		= 0,
+		IDLE		,
+		CHECKING	,
+		MAX			,
+	}
+	public STEP m_eStep;
+	public STEP m_eStepPre;
+	public override void Initialize ()
+	{
+		base.Initialize ();
+		m_eStep = STEP.IDLE;
+		m_eStepPre = STEP.MAX;
+	}
+
+	public override void Close ()
+	{
+		base.Close ();
+		m_eStep = STEP.MAX;
+	}
+
 	// Update is called once per frame
 	void Update () {
 
-		if (m_bmIconList.ButtonPushed) {
-			if (m_iSelectingIndex != m_bmIconList.Index) {
-				m_iSelectingIndex  = m_bmIconList.Index;
-				m_imageCheck.InStart ();
-			}
-			m_bmIconList.TriggerClearAll ();
-
-			m_imageCheck.InStart ();
+		bool bInit = false;
+		if (m_eStepPre != m_eStep) {
+			m_eStepPre  = m_eStep;
+			bInit = true;
 		}
 
-		if (m_imageCheck.ButtonPushed) {
+		switch( m_eStep ){
 
-			if (m_imageCheck.Index == 0) {
-			} else if (m_imageCheck.Index == 1) {
-				IconSet (m_iSelectingIndex);
-			} else {
+		case STEP.IDLE:
+			if (bInit) {
+				m_bmIconList.TriggerClearAll ();
 			}
-			m_imageCheck.OutStart();
+			if (m_bmIconList.ButtonPushed) {
+				int iPushedId = m_iconList [m_bmIconList.Index].m_csvImageData.id;
+				m_iSelectingId = iPushedId;
+				m_bmIconList.TriggerClearAll ();
+				m_eStep = STEP.CHECKING;
+			}
+			break;
 
+		case STEP.CHECKING:
+			if (bInit) {
+				m_imageCheck.TriggerClearAll ();
+				m_imageCheck.InStart (m_iSelectingId);
+			}
+			if (m_imageCheck.ButtonPushed) {
+				if (m_imageCheck.Index == 0) {
+				} else if (m_imageCheck.Index == 1) {
+					IconSelect (m_iSelectingId);
+
+					Debug.Log (GameMain.Instance.kvs_data.list.Count);
+					GameMain.Instance.kvs_data.WriteInt (DataManager.KEY_SELECTING_IMAGE_ID, m_iSelectingId);
+					GameMain.Instance.kvs_data.Save ();
+				} else {
+				}
+				m_imageCheck.OutStart ();
+				m_eStep = STEP.IDLE;
+			}
+			break;
+		case STEP.MAX:
+		default:
+			break;
 		}
 
 
