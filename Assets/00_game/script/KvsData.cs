@@ -20,7 +20,7 @@ public class KvsData : SODataBase<KVSParam>{
 	}
 	protected override void save ()
 	{
-		Debug.LogError (string.Format( "kvs.save {0}" , list.Count));
+		//Debug.LogError (string.Format( "kvs.save {0}" , list.Count));
 		StreamWriter sw = Textreader.Open (string.Format ("{0}.csv", FILE_NAME));
 		string strHead = string.Format ("{0},{1}",
 			"key",

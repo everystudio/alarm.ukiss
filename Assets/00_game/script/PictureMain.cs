@@ -103,8 +103,6 @@ public class PictureMain : PageBase {
 				if (m_imageCheck.Index == 0) {
 				} else if (m_imageCheck.Index == 1) {
 					IconSelect (m_iSelectingId);
-
-					Debug.Log (GameMain.Instance.kvs_data.list.Count);
 					GameMain.Instance.kvs_data.WriteInt (DataManager.KEY_SELECTING_IMAGE_ID, m_iSelectingId);
 					GameMain.Instance.kvs_data.Save ();
 				} else {
