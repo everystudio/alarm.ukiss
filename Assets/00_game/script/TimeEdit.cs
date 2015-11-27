@@ -95,18 +95,18 @@ public class TimeEdit : OtherPage {
 
 		string strRepeat = "None";
 
-		for (int i = 0; i < DataManager.Instance.STR_WEEK_ARR.Length; i++) {
+		for (int i = 0; i < DataManagerAlarm.Instance.STR_WEEK_ARR.Length; i++) {
 			bool bFlag = 0 < (_param.repeat_type & (1<<i));
 			if (bFlag) {
 				if (strRepeat.Equals ("None") == true) {
-					strRepeat = DataManager.Instance.STR_WEEK_ARR [i];
+					strRepeat = DataManagerAlarm.Instance.STR_WEEK_ARR [i];
 				} else {
-					strRepeat = string.Format ("{0},{1}", strRepeat, DataManager.Instance.STR_WEEK_ARR [i]);
+					strRepeat = string.Format ("{0},{1}", strRepeat, DataManagerAlarm.Instance.STR_WEEK_ARR [i]);
 				}
 			}
 		}
 		m_lbRepeat.text = strRepeat;
-		string strSnooze = DataManager.Instance.STR_SNOOZE_ARR[_param.snooze];
+		string strSnooze = DataManagerAlarm.Instance.STR_SNOOZE_ARR[_param.snooze];
 		m_lbSnooze.text = strSnooze;
 
 		string strVoice = "";

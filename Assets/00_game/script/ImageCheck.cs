@@ -43,7 +43,7 @@ public class ImageCheck : OtherPage {
 		switch (m_eStep) {
 		case STEP.LOAD:
 			if (bInit) {
-				foreach (CsvImageData data in DataManager.master_image_list) {
+				foreach (CsvImageData data in DataManagerAlarm.Instance.master_image_list) {
 					if (data.id == m_iSelectingId) {
 						m_switchSprite.SetSprite (data.name_image);
 					}

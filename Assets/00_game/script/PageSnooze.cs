@@ -17,13 +17,13 @@ public class PageSnooze : OtherPage {
 		if (m_bInitialized == false) {
 			base.Initialize ();
 
-			m_bmSnoozeType.ButtonRefresh (DataManager.Instance.STR_SNOOZE_ARR.Length);
+			m_bmSnoozeType.ButtonRefresh (DataManagerAlarm.Instance.STR_SNOOZE_ARR.Length);
 
-			for (int i = 0; i < DataManager.Instance.STR_SNOOZE_ARR.Length; i++) {
+			for (int i = 0; i < DataManagerAlarm.Instance.STR_SNOOZE_ARR.Length; i++) {
 				GameObject obj = PrefabManager.Instance.MakeObject ("prefab/BannerSnooze", m_Grid.gameObject);
 				obj.name = string.Format ("{0}", i);
 				BannerSnooze script = obj.GetComponent<BannerSnooze> ();
-				script.Initialize (DataManager.Instance.STR_SNOOZE_ARR [i], false);
+				script.Initialize (DataManagerAlarm.Instance.STR_SNOOZE_ARR [i], false);
 				m_BannerSnoozeList.Add (script);
 				m_bmSnoozeType.AddButtonBase (i, obj);
 			}
@@ -33,7 +33,7 @@ public class PageSnooze : OtherPage {
 
 		int iCount = 0;
 		foreach (BannerSnooze snooze in m_BannerSnoozeList) {
-			snooze.Initialize (DataManager.Instance.STR_SNOOZE_ARR [iCount], iCount == GameMain.Instance.EditingAlarmParam.snooze);
+			snooze.Initialize (DataManagerAlarm.Instance.STR_SNOOZE_ARR [iCount], iCount == GameMain.Instance.EditingAlarmParam.snooze);
 		}
 
 		m_bInitialized = true;
@@ -44,7 +44,7 @@ public class PageSnooze : OtherPage {
 		base.InStart ();
 		int iCount = 0;
 		foreach (BannerSnooze snooze in m_BannerSnoozeList) {
-			snooze.Initialize (DataManager.Instance.STR_SNOOZE_ARR [iCount], iCount == _param.snooze);
+			snooze.Initialize (DataManagerAlarm.Instance.STR_SNOOZE_ARR [iCount], iCount == _param.snooze);
 			iCount += 1;
 		}
 

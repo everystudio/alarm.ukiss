@@ -19,8 +19,7 @@ public class AlarmMain : PageBase {
 			Debug.Log (strTime);
 			DateTime dateTime = TimeManager.Instance.MakeDateTime (strTime);
 			m_lbNextTime.text = string.Format ("{0};{1}", dateTime.Hour, dateTime.Minute);
-			m_lbNextWeek.text = DataManager.Instance.STR_WEEK_SHORT_ARR[TimeManager.Instance.GetWeekIndex(strTime)];
-
+			m_lbNextWeek.text = DataManagerAlarm.Instance.STR_WEEK_SHORT_ARR[TimeManager.Instance.GetWeekIndex(strTime)];
 		} else {
 			m_lbNextTime.text = "--:--";
 			m_lbNextWeek.text = "";
@@ -34,12 +33,10 @@ public class AlarmMain : PageBase {
 		m_btnSetList.TriggerClear ();
 		m_TimeSet.Initialize ();
 
-		Debug.Log (GameMain.Instance.reserve_list.Count);
 		setNextTimer (GameMain.Instance.reserve_list);
 
-		int iSelectingImageId = GameMain.Instance.kvs_data.ReadInt (DataManager.KEY_SELECTING_IMAGE_ID);
-		Debug.LogError (iSelectingImageId);
-		foreach (CsvImageData data in DataManager.master_image_list) {
+		int iSelectingImageId = GameMain.Instance.kvs_data.ReadInt (DataManagerAlarm.KEY_SELECTING_IMAGE_ID);
+		foreach (CsvImageData data in DataManagerAlarm.Instance.master_image_list) {
 			if (data.id == iSelectingImageId) {
 				m_switchSprite.SetSprite (data.name_image);
 			}

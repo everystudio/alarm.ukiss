@@ -91,7 +91,6 @@ public class GameMain : PageBase {
 	public List<AlarmReserve> reserve_list = new List<AlarmReserve> ();
 
 	public void setupAlarmReserve( ref List<AlarmReserve> _insertList , List<AlarmParam> _alarmList ){
-
 		_insertList.Clear ();
 
 		DateTime datetimeNow = TimeManager.GetNow();
@@ -121,7 +120,8 @@ public class GameMain : PageBase {
 				_insertList.Add (insert_data);
 			} else {
 				int iNowWeek = TimeManager.Instance.GetWeekIndex (TimeManager.StrGetTime ());
-				for (int i = 0; i < DataManager.Instance.STR_WEEK_ARR.Length; i++) {
+
+				for (int i = 0; i < DataManagerAlarm.Instance.STR_WEEK_ARR.Length; i++) {
 					if (0 < (param.repeat_type & (1<<i))) {
 						// 曜日にひっかかった
 						string strStartDate = "";
@@ -135,7 +135,7 @@ public class GameMain : PageBase {
 								iOffset = 7;
 							}
 						} else if (iOffset < 0) {
-							iOffset += DataManager.Instance.STR_WEEK_ARR.Length;
+							iOffset += DataManagerAlarm.Instance.STR_WEEK_ARR.Length;
 						} else {
 							// そのまま
 						}
@@ -177,7 +177,6 @@ public class GameMain : PageBase {
 		setupAlarmReserve (ref reserve_list, m_AlarmData.list);
 		kvs_data.Load (KvsData.FILE_NAME);
 		int iTest = kvs_data.ReadInt ("test");
-		Debug.Log (iTest);
 		iTest += 1;
 		kvs_data.WriteInt ("test", iTest );
 		kvs_data.Save ();

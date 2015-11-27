@@ -22,13 +22,13 @@ public class PictureMain : PageBase {
 
 	// Use this for initialization
 	void Start () {
-		m_bmIconList.ButtonRefresh (DataManager.master_image_list.Count);
+		m_bmIconList.ButtonRefresh (DataManagerAlarm.Instance.master_image_list.Count);
 
-		m_iSelectingId = GameMain.Instance.kvs_data.ReadInt (DataManager.KEY_SELECTING_IMAGE_ID);
+		m_iSelectingId = GameMain.Instance.kvs_data.ReadInt (DataManagerAlarm.KEY_SELECTING_IMAGE_ID);
 
 		int iIndex = 0;
 
-		foreach (CsvImageData data in DataManager.master_image_list) {
+		foreach (CsvImageData data in DataManagerAlarm.Instance.master_image_list) {
 
 			GameObject obj = PrefabManager.Instance.MakeObject ("prefab/IconRoot", m_Grid.gameObject);
 			IconList script = obj.GetComponent<IconList> ();
@@ -103,7 +103,7 @@ public class PictureMain : PageBase {
 				if (m_imageCheck.Index == 0) {
 				} else if (m_imageCheck.Index == 1) {
 					IconSelect (m_iSelectingId);
-					GameMain.Instance.kvs_data.WriteInt (DataManager.KEY_SELECTING_IMAGE_ID, m_iSelectingId);
+					GameMain.Instance.kvs_data.WriteInt (DataManagerAlarm.KEY_SELECTING_IMAGE_ID, m_iSelectingId);
 					GameMain.Instance.kvs_data.Save ();
 				} else {
 				}

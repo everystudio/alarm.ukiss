@@ -32,7 +32,7 @@ public class VoiceMain : PageBase {
 	void Start(){
 		//m_bmBannerList = new ButtonManager ();
 		m_bmBannerShop = new ButtonManager ();
-		foreach (CsvVoiceData data in DataManager.master_voice_list) {
+		foreach (CsvVoiceData data in DataManagerAlarm.Instance.master_voice_list) {
 			if (data.type == 1) {
 
 				GameObject obj = PrefabManager.Instance.MakeObject ("prefab/BannerList", m_gridList.gameObject);
