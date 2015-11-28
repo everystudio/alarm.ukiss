@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 [System.Serializable]
-public class KVSParam : SODataParam {
+public class KVSParam : CsvDataParam {
 	public string m_key;
 	public string m_value;
 
@@ -12,7 +12,7 @@ public class KVSParam : SODataParam {
 	public string value{ get{ return m_value;} set{m_value = value; } }
 }
 
-public class KvsData : SODataBase<KVSParam>{
+public class KvsData : CsvData<KVSParam>{
 	public string READ_ERROR_STRING = "sql_datamanager_read_error";
 	public const string FILE_NAME = "kvs";
 

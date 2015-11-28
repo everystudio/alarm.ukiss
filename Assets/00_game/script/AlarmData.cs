@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 [System.Serializable]
-public class AlarmParam : SODataParam {
+public class AlarmParam : CsvDataParam {
 	public int m_serial;
 	public string m_time;
 	public int m_status;
@@ -19,7 +19,7 @@ public class AlarmParam : SODataParam {
 	public int voice_type{ get{ return m_voice_type;} set{m_voice_type = value; } }
 }
 
-public class AlarmData : SODataBase<AlarmParam>{
+public class AlarmData : CsvData<AlarmParam>{
 
 	public const string FILENAME = "alarmparam";
 

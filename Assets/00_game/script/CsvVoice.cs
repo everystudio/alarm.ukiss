@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CsvVoiceData : MasterBase
+public class CsvVoiceData : CsvDataParam
 {
 	public int id { get; private set; }
 	public int type { get; private set; }
@@ -12,7 +12,7 @@ public class CsvVoiceData : MasterBase
 }
 
 
-public class CsvVoice : CsvBase<CsvVoiceData> {
+public class CsvVoice : CsvData<CsvVoiceData> {
 	private static readonly string FilePath = "csv/voice_list";
 	public void Load() { Load(FilePath); }
 }

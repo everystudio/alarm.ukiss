@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CsvImageData : MasterBase
+public class CsvImageData : CsvDataParam
 {
 	public int id { get; private set; }
 	public int type { get; private set; }
@@ -12,7 +12,7 @@ public class CsvImageData : MasterBase
 }
 
 
-public class CsvImage : CsvBase<CsvImageData> {
+public class CsvImage : CsvData<CsvImageData> {
 	private static readonly string FilePath = "csv/image_list";
 	public void Load() { Load(FilePath); }
 }
