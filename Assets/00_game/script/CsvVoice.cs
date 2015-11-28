@@ -14,7 +14,7 @@ public class CsvVoiceData : CsvDataParam
 
 public class CsvVoice : CsvData<CsvVoiceData> {
 	private static readonly string FilePath = "csv/voice_list";
-	public void Load() { Load(FilePath); }
+	public void Load() { LoadResources(FilePath); }
 }
 
 

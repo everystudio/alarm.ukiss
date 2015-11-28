@@ -14,7 +14,7 @@ public class CsvImageData : CsvDataParam
 
 public class CsvImage : CsvData<CsvImageData> {
 	private static readonly string FilePath = "csv/image_list";
-	public void Load() { Load(FilePath); }
+	public void Load() { LoadResources(FilePath); }
 }
 
 
