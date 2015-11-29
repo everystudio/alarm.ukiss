@@ -1,0 +1,16 @@
+ManifestFileVersion: 0
+CRC: 1120353851
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 1cb4a2b190eeb526dca427ae8c2dac42
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c516f2a3b2b6b67ef759f6410a790acd
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+Assets:
+- Assets/AssetBundleResource/voice/everystudio/school/se_start_00.ogg
+Dependencies: []

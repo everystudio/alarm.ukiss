@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class BannerVoiceBase : BannerBase {
 
@@ -66,7 +67,16 @@ public class BannerVoiceBase : BannerBase {
 		case STEP.PLAYING:
 			if (bInit) {
 				SoundManager.Instance.StopAll (AUDIO_TYPE.SE);
-				SoundManager.Instance.PlaySE ("");
+
+				List<string> sound_list = new List<string> ();
+
+				foreach (CsvVoicesetData data in DataManagerAlarm.Instance.master_voiceset_list) {
+					if (m_csvVoiceData.id == data.id) {
+						sound_list.Add (data.name);
+					}
+				}
+				int iIndex = UtilRand.GetRand (sound_list.Count);
+				SoundManager.Instance.PlaySE ( sound_list[iIndex] );
 				m_sprStop.gameObject.SetActive (false);
 				m_sprPlaying.gameObject.SetActive (true);
 			}

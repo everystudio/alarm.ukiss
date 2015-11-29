@@ -17,6 +17,13 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 			return Instance.m_csvVoice.All;
 		}
 	}
+	public CsvVoiceset m_csvVoiceset = new CsvVoiceset();
+	public List<CsvVoicesetData> master_voiceset_list {
+		get{ 
+			return Instance.m_csvVoiceset.All;
+		}
+	}
+
 
 	public override void Initialize ()
 	{
@@ -24,6 +31,7 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 
 		m_csvImage.Load ();
 		m_csvVoice.Load ();
+		m_csvVoiceset.Load ();
 
 	}
 	public string [] STR_MONTH_SHORT_ARR = new string[13]{
@@ -75,7 +83,6 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 		}
 		return new CsvVoiceData ();
 	}
-
 }
 
 [System.Serializable]
