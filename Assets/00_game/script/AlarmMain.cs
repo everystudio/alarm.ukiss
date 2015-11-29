@@ -10,8 +10,18 @@ public class AlarmMain : PageBase {
 
 	public TimeSet m_TimeSet;
 
+	public UILabel m_lbNowDate;
+	public UILabel m_lbNowTime;
+
 	public UILabel m_lbNextTime;
 	public UILabel m_lbNextWeek;
+
+	public void refreshTime (){
+		DateTime now = TimeManager.GetNow ();
+		m_lbNowDate.text = string.Format( "{0} {1:D2} {2}" , DataManagerAlarm.Instance.STR_MONTH_SHORT_ARR[now.Month] , now.Day , DataManagerAlarm.Instance.STR_WEEK_SHORT_ARR[TimeManager.Instance.GetWeekIndex(TimeManager.StrGetTime())]);
+
+		m_lbNowTime.text = string.Format ("{0:D2}:{1:D2}:{2:D2}", now.Hour, now.Minute, now.Second);
+	}
 
 	public void setNextTimer( List<AlarmReserve> _list ){
 		if (0 < _list.Count) {
@@ -29,6 +39,7 @@ public class AlarmMain : PageBase {
 	public override void Initialize ()
 	{
 		base.Initialize ();
+		refreshTime ();
 
 		m_btnSetList.TriggerClear ();
 		m_TimeSet.Initialize ();
@@ -37,6 +48,10 @@ public class AlarmMain : PageBase {
 
 		int iSelectingImageId = GameMain.Instance.kvs_data.ReadInt (DataManagerAlarm.KEY_SELECTING_IMAGE_ID);
 		foreach (CsvImageData data in DataManagerAlarm.Instance.master_image_list) {
+			if (iSelectingImageId == 0) {
+				iSelectingImageId = data.id;
+				GameMain.Instance.kvs_data.WriteInt (DataManagerAlarm.KEY_SELECTING_IMAGE_ID, iSelectingImageId);
+			}
 			if (data.id == iSelectingImageId) {
 				m_switchSprite.SetSprite (data.name_image);
 			}
@@ -49,8 +64,16 @@ public class AlarmMain : PageBase {
 		base.Close ();
 	}
 
+	public const float UPDTE_INTERVAL = 2.0f;
+	public float m_fUpdateInterval;
+
 	void Update(){
 
+		m_fUpdateInterval += Time.deltaTime;
+		if (UPDTE_INTERVAL < m_fUpdateInterval) {
+			m_fUpdateInterval -= UPDTE_INTERVAL;
+			refreshTime ();
+		}
 
 		if (m_btnSetList.ButtonPushed) {
 			m_btnSetList.TriggerClear ();

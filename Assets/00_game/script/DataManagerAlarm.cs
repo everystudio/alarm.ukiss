@@ -26,6 +26,21 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 		m_csvVoice.Load ();
 
 	}
+	public string [] STR_MONTH_SHORT_ARR = new string[13]{
+		"NONE",
+		"JAN",
+		"FEB",
+		"MAR",
+		"APR",
+		"MAY",
+		"JUN",
+		"JUL",
+		"AUG",
+		"SEP",
+		"OCT",
+		"NOV",
+		"DEC"
+	};
 
 	public string [] STR_WEEK_ARR = new string[7]{
 		"Monday",
@@ -51,6 +66,15 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 		"None",
 	};
 	public const string KEY_SELECTING_IMAGE_ID = "selecting_image_id";
+
+	public CsvVoiceData GetVoiceData( int _iId ){
+		foreach (CsvVoiceData voice_data in DataManagerAlarm.Instance.master_voice_list) {
+			if (_iId == voice_data.id) {
+				return voice_data;
+			}
+		}
+		return new CsvVoiceData ();
+	}
 
 }
 

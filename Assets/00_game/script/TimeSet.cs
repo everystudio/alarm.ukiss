@@ -70,6 +70,7 @@ public class TimeSet : OtherPage {
 				GameMain.Instance.EditingAlarmParam.time = TimeManager.StrGetTime ();
 				GameMain.Instance.EditingAlarmParam.repeat_type = 0;
 				GameMain.Instance.EditingAlarmParam.snooze = 2;
+				GameMain.Instance.EditingAlarmParam.voice_type = DataManagerAlarm.Instance.master_voice_list[0].id;
 				m_TimeEdit.InStart (GameMain.Instance.EditingAlarmParam);
 
 			}

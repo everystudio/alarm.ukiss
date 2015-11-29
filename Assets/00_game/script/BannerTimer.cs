@@ -19,7 +19,9 @@ public class BannerTimer : BannerBase {
 		DateTime time = TimeManager.Instance.MakeDateTime (_param.time);
 
 		m_lbTimer.text = string.Format( "{0:D2}:{1:D2}" , time.Hour , time.Minute );
-		m_lbName.text = "sample";
+
+		m_lbName.text = DataManagerAlarm.Instance.GetVoiceData(_param.voice_type).description;
+
 		Debug.Log (_param.status);
 		SetStatus (_param.status);
 

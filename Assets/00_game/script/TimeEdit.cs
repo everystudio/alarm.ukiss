@@ -38,6 +38,8 @@ public class TimeEdit : OtherPage {
 	public UILabel m_lbRepeat;
 	public UILabel m_lbSnooze;
 
+	public UILabel m_lbVoice;
+
 	public int m_iHour;
 	public int m_iMinute;
 
@@ -109,7 +111,12 @@ public class TimeEdit : OtherPage {
 		string strSnooze = DataManagerAlarm.Instance.STR_SNOOZE_ARR[_param.snooze];
 		m_lbSnooze.text = strSnooze;
 
-		string strVoice = "";
+		m_lbVoice.text = "";
+		foreach (CsvVoiceData voice_data in DataManagerAlarm.Instance.master_voice_list) {
+			if (_param.voice_type == voice_data.id) {
+				m_lbVoice.text = voice_data.description;
+			}
+		}
 	}
 
 	void Update(){
