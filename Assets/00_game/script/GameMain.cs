@@ -32,11 +32,7 @@ public class GameMain : PageBase {
 		get{ 
 			if (m_KvsData == null) {
 
-				Debug.Log (m_KvsData);
-				Debug.LogError ("here");
 				m_KvsData = new KvsData ();
-
-				Debug.Log (m_KvsData);
 
 			}
 			return m_KvsData;
@@ -91,6 +87,8 @@ public class GameMain : PageBase {
 	public List<AlarmReserve> reserve_list = new List<AlarmReserve> ();
 
 	public void setupAlarmReserve( ref List<AlarmReserve> _insertList , List<AlarmParam> _alarmList ){
+
+		LocalNotificationManager.Instance.ClearLocalNotification ();
 		_insertList.Clear ();
 
 		DateTime datetimeNow = TimeManager.GetNow();
@@ -101,23 +99,32 @@ public class GameMain : PageBase {
 			//Debug.Log ( string.Format( "serial:{0} repeat_type:{1}",param.serial,  param.repeat_type));
 			if (param.repeat_type == 0) {
 				DateTime checkDate = TimeManager.Instance.MakeDateTime (param.time);
-				string strCheckDate = string.Format ("{0}-{1:D2}-{2:D2} {3:D2}:{4:D2}:00", datetimeNow.Year, datetimeNow.Month, datetimeNow.Day, checkDate.Hour, checkDate.Minute);
-				Debug.Log (TimeManager.Instance.GetDiffNow (strCheckDate).TotalSeconds);
-
+				//string strCheckDate = string.Format ("{0}-{1:D2}-{2:D2} {3:D2}:{4:D2}:00", datetimeNow.Year, datetimeNow.Month, datetimeNow.Day, checkDate.Hour, checkDate.Minute);
+				//Debug.Log (TimeManager.Instance.GetDiffNow (strCheckDate).TotalSeconds);
+				string strCheckDate = param.time;
 				TimeSpan time_span = TimeManager.Instance.GetDiffNow (strCheckDate);
 				AlarmReserve insert_data = new AlarmReserve ();
 				if (0 < time_span.TotalSeconds) {
 					insert_data.m_strTime = strCheckDate;
+					insert_data.m_iVoiceType = param.voice_type;
+					insert_data.m_lTime = (long)TimeManager.Instance.GetDiffNow (insert_data.m_strTime).TotalSeconds;
+					_insertList.Add (insert_data);
 				} else {
+
+				}
+				/*
+				 * こっちは旧式
+				else {
+
 					DateTime tomorrowDateTime = TimeManager.GetNow();
 					tomorrowDateTime = tomorrowDateTime.AddDays (1);
-
 					string strTomorrow = string.Format ("{0}-{1:D2}-{2:D2} {3:D2}:{4:D2}:00", tomorrowDateTime.Year, tomorrowDateTime.Month, tomorrowDateTime.Day, checkDate.Hour, checkDate.Minute);
 					insert_data.m_strTime = strTomorrow;
 				}
 				insert_data.m_iVoiceType = param.voice_type;
-				insert_data.m_lTime = (long)TimeManager.Instance.GetDiffNow (insert_data.m_strTime).TotalMinutes;
+				insert_data.m_lTime = (long)TimeManager.Instance.GetDiffNow (insert_data.m_strTime).TotalSeconds;
 				_insertList.Add (insert_data);
+				*/
 			} else {
 				int iNowWeek = TimeManager.Instance.GetWeekIndex (TimeManager.StrGetTime ());
 
@@ -148,7 +155,7 @@ public class GameMain : PageBase {
 							AlarmReserve insert_data = new AlarmReserve ();
 							insert_data.m_strTime = strNext;
 							insert_data.m_iVoiceType = param.voice_type;
-							insert_data.m_lTime = (long)TimeManager.Instance.GetDiffNow (insert_data.m_strTime).TotalMinutes;
+							insert_data.m_lTime = (long)TimeManager.Instance.GetDiffNow (insert_data.m_strTime).TotalSeconds;
 							_insertList.Add (insert_data);
 
 							// 次の準備
@@ -159,11 +166,20 @@ public class GameMain : PageBase {
 			}
 			_insertList.Sort ((a, b) => (int)(a.m_lTime - b.m_lTime));
 		}
+		foreach (AlarmReserve reserve in _insertList) {
+			LocalNotificationManager.Instance.AddLocalNotification (reserve.m_lTime, ConfigManager.Instance.GetEditPlayerSettingsData ().projectData.m_strProductName, "時刻になりました");
+		}
+
 		return;
 	}
 
 
+	public void reserveTimeReset(){
+		m_AlarmData.Load (AlarmData.FILENAME);
+		setupAlarmReserve (ref reserve_list, m_AlarmData.list);
+		m_AlarmMain.setNextTimer (reserve_list);
 
+	}
 	void Start(){
 
 		instance = this;
@@ -173,8 +189,8 @@ public class GameMain : PageBase {
 		if (m_AlarmData == null) {
 			m_AlarmData = new AlarmData ();
 		}
-		m_AlarmData.Load (AlarmData.FILENAME);
-		setupAlarmReserve (ref reserve_list, m_AlarmData.list);
+		reserveTimeReset ();
+
 		kvs_data.Load (KvsData.FILE_NAME);
 		int iTest = kvs_data.ReadInt ("test");
 		iTest += 1;

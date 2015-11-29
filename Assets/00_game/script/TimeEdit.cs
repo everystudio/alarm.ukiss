@@ -150,10 +150,10 @@ public class TimeEdit : OtherPage {
 					int iSerial = 0;
 					foreach (AlarmParam param in GameMain.Instance.m_AlarmData.list) {
 						if (iSerial <= param.serial) {
-							iSerial = param.serial + 1;
+							iSerial = param.serial;
 						}
 					}
-					GameMain.Instance.EditingAlarmParam.serial = iSerial;
+					GameMain.Instance.EditingAlarmParam.serial = GameMain.Instance.m_AlarmData.list.Count + 1;
 					GameMain.Instance.m_AlarmData.list.Add (GameMain.Instance.EditingAlarmParam);
 				}
 			} else {

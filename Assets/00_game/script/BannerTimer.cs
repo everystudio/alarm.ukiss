@@ -33,6 +33,20 @@ public class BannerTimer : BannerBase {
 		} else {
 			m_sprButtonOn.gameObject.SetActive (true);
 			m_sprButtonOff.gameObject.SetActive (false);
+
+			DateTime datetimeNow = TimeManager.GetNow();
+			DateTime checkDate = TimeManager.Instance.MakeDateTime (m_AlarmParam.time);
+			string strCheckDate = string.Format ("{0}-{1:D2}-{2:D2} {3:D2}:{4:D2}:00", datetimeNow.Year, datetimeNow.Month, datetimeNow.Day, checkDate.Hour, checkDate.Minute);
+
+			TimeSpan time_span = TimeManager.Instance.GetDiffNow (strCheckDate);
+			if (0 < time_span.TotalSeconds) {
+			} else {
+				DateTime tomorrowDateTime = TimeManager.GetNow();
+				tomorrowDateTime = tomorrowDateTime.AddDays (1);
+				string strTomorrow = string.Format ("{0}-{1:D2}-{2:D2} {3:D2}:{4:D2}:00", tomorrowDateTime.Year, tomorrowDateTime.Month, tomorrowDateTime.Day, checkDate.Hour, checkDate.Minute);
+				strCheckDate = strTomorrow;
+			}
+			m_AlarmParam.time = strCheckDate;
 		}
 	}
 
