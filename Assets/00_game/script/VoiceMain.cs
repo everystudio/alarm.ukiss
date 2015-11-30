@@ -19,6 +19,12 @@ public class VoiceMain : PageBase {
 
 	public int m_iTabIndex;
 
+	public void Purchase( string _strProductId ){
+		foreach (BannerShop shop in m_bannerShop) {
+			shop.Purchase (_strProductId);
+		}
+	}
+
 	public enum STEP
 	{
 		NONE		,

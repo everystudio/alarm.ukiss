@@ -29,6 +29,11 @@ public class GameMain : PageBase {
 	public AlarmParam EditingAlarmParam;
 	public AlarmData m_AlarmData = new AlarmData ();
 
+	public VoiceMain m_VoiceMain;
+	public void Purchase( string _strProductId ){
+		m_VoiceMain.Purchase (_strProductId);
+	}
+
 	public KvsData kvs_data{
 		get{ 
 			if (m_KvsData == null) {

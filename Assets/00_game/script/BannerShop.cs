@@ -11,6 +11,15 @@ public class BannerShop : BannerVoiceBase {
 	public ButtonBase m_btnBuy;
 	public GameObject m_goPurchased;
 	public CsvVoiceData m_csvVoiceData;
+
+	// 一方通行
+	public void Purchase( string _strProductId ){
+		if (m_csvVoiceData.name_voice.Equals (_strProductId)) {
+			m_btnBuy.gameObject.SetActive (false);
+			m_goPurchased.SetActive (true);
+		}
+	}
+
 	public override void initialize (CsvVoiceData _data)
 	{
 		base.initialize (_data);
@@ -25,10 +34,14 @@ public class BannerShop : BannerVoiceBase {
 		m_goPurchased.SetActive (false);
 
 		foreach (string product_id in DataManagerAlarm.Instance.purchased_list) {
+
+			Purchase (product_id);
+			/*
 			if (product_id.Equals (_data.name_voice)) {
 				m_btnBuy.gameObject.SetActive (false);
 				m_goPurchased.SetActive (true);
 			}
+			*/
 		}
 
 		foreach (GoogleSkuInfo info in DataManagerAlarm.Instance.product_data_list) {

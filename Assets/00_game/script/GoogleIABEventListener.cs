@@ -105,6 +105,9 @@ namespace Prime31
 		void purchaseSucceededEvent( GooglePurchase purchase )
 		{
 			Debug.Log( "purchaseSucceededEvent: " + purchase );
+
+			DataManagerAlarm.Instance.purchased_list.Add (purchase.productId);
+			GameMain.Instance.Purchase (purchase.productId);
 		}
 	
 	
