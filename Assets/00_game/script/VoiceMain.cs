@@ -12,7 +12,7 @@ public class VoiceMain : PageBase {
 	public UIGrid m_gridStore;
 
 	public ButtonManager m_bmBannerList;
-	private ButtonManager m_bmBannerShop;
+	public ButtonManager m_bmBannerShop;
 
 	public List<BannerList> m_bannerList = new List<BannerList> ();
 	public List<BannerShop> m_bannerShop = new List<BannerShop> ();
@@ -29,9 +29,10 @@ public class VoiceMain : PageBase {
 	public STEP m_eStep;
 	public STEP m_eStepPre;
 
-	void Start(){
+	public bool m_bSubStarted;
+	void subStart(){
 		//m_bmBannerList = new ButtonManager ();
-		m_bmBannerShop = new ButtonManager ();
+		//m_bmBannerShop = new ButtonManager ();
 		foreach (CsvVoiceData data in DataManagerAlarm.Instance.master_voice_list) {
 			if (data.type == 1) {
 
@@ -60,6 +61,10 @@ public class VoiceMain : PageBase {
 
 	public override void Initialize ()
 	{
+		if (m_bSubStarted == false) {
+			subStart ();
+			m_bSubStarted = true;
+		}
 		m_TabButtonManager.ButtonInit ();
 		m_TabButtonManager.TriggerClearAll ();
 		m_iTabIndex = m_TabButtonManager.Index;
@@ -67,6 +72,7 @@ public class VoiceMain : PageBase {
 
 		m_eStep = STEP.IDLE;
 		m_eStepPre = STEP.MAX;
+
 	}
 
 	public override void Close ()
@@ -119,15 +125,17 @@ public class VoiceMain : PageBase {
 			m_bmBannerList.TriggerClearAll ();
 		}
 
-		if (m_bmBannerShop.ButtonPushed) {
-			if (m_iShopIndex != m_bmBannerShop.Index ) {
-				if (0 <= m_iShopIndex) {
-					m_bannerShop [m_iShopIndex].Reset ();
+		if (m_bmBannerShop != null) {
+			if (m_bmBannerShop.ButtonPushed) {
+				if (m_iShopIndex != m_bmBannerShop.Index) {
+					if (0 <= m_iShopIndex) {
+						m_bannerShop [m_iShopIndex].Reset ();
+					}
+					m_iShopIndex = m_bmBannerShop.Index;
 				}
-				m_iShopIndex = m_bmBannerShop.Index;
+				m_bannerShop [m_iShopIndex].Pushed ();
+				m_bmBannerShop.TriggerClearAll ();
 			}
-			m_bannerShop[m_iShopIndex].Pushed();
-			m_bmBannerShop.TriggerClearAll ();
 		}
 
 		switch (m_eStep) {

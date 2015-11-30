@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Prime31;
 
 public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 
@@ -83,6 +84,8 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 		}
 		return new CsvVoiceData ();
 	}
+	public List<GoogleSkuInfo> product_data_list = new List<GoogleSkuInfo> ();
+	public List<string> purchased_list = new List<string> ();
 }
 
 [System.Serializable]

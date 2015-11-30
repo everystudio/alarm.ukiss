@@ -50,7 +50,7 @@ public class BannerVoiceBase : BannerBase {
 		}
 	}
 
-	void Update(){
+	protected void Update(){
 
 		bool bInit = false;
 		if (m_eStepPre != m_eStep) {
