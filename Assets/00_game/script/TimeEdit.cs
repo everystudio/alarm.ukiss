@@ -34,11 +34,14 @@ public class TimeEdit : OtherPage {
 
 	public PageRepeat m_PageRepeat;
 	public PageSnooze m_PageSnooze;
+	public PageVoice m_PageVoice;
 
 	public UILabel m_lbRepeat;
 	public UILabel m_lbSnooze;
 
 	public UILabel m_lbVoice;
+
+	public VoiceMain m_voiceMain;
 
 	public int m_iHour;
 	public int m_iMinute;
@@ -70,6 +73,8 @@ public class TimeEdit : OtherPage {
 
 		m_PageRepeat.Initialize ();
 		m_PageSnooze.Initialize ();
+
+
 	}
 
 	public void Initialize( AlarmParam _param ){
@@ -90,6 +95,9 @@ public class TimeEdit : OtherPage {
 
 		m_PageRepeat.Initialize ();
 		m_PageSnooze.Initialize ();
+
+		m_eStep = STEP.IDLE;
+		m_eStepPre = STEP.MAX;
 
 	}
 
@@ -119,54 +127,156 @@ public class TimeEdit : OtherPage {
 		}
 	}
 
+	public enum STEP
+	{
+		NONE		= 0,
+		IDLE		,
+		REPEAT		,
+		SNOOZE		,
+		VOICE		,
+		MAX			,
+	}
+	public STEP m_eStep;
+	public STEP m_eStepPre;
+
 	void Update(){
-
-		if (m_btnRepeat.ButtonPushed ) {
-			m_btnRepeat.TriggerClear ();
-			m_PageRepeat.InStart(GameMain.Instance.EditingAlarmParam );
+	
+		bool bInit = false;
+		if (m_eStepPre != m_eStep) {
+			m_eStepPre  = m_eStep;
+			bInit = true;
 		}
 
-		if (m_btnSnooze.ButtonPushed) {
-			m_btnSnooze.TriggerClear ();
-			m_PageSnooze.InStart (GameMain.Instance.EditingAlarmParam);
-		}
 
-		if (ButtonPushed) {
-			TriggerClearAll ();
-			if (Index == 0) {
-				OutStart ();
-				// 面倒なので再読み込み
-			} else if (Index == 1) {
-				OutStart ();
-				// ここは保存
-				Debug.LogError (GameMain.Instance.EditingAlarmParam.serial);
-				GameMain.Instance.EditingAlarmParam.time = string.Format( "1982-10-10 {0:D2}:{1:D2}:00" , m_iHour , m_iMinute );
-
-				GameMain.Instance.m_AlarmData.Load (AlarmData.FILENAME);
-				if (0 < GameMain.Instance.EditingAlarmParam.serial) {
-					foreach (AlarmParam param in GameMain.Instance.m_AlarmData.list) {
-						if (param.serial == GameMain.Instance.EditingAlarmParam.serial) {
-							param.repeat_type = GameMain.Instance.EditingAlarmParam.repeat_type;
-							param.snooze = GameMain.Instance.EditingAlarmParam.snooze;
-							param.status = GameMain.Instance.EditingAlarmParam.status;
-
-							param.time = GameMain.Instance.EditingAlarmParam.time;
-						}
-					}
-				} else {
-					int iSerial = 0;
-					foreach (AlarmParam param in GameMain.Instance.m_AlarmData.list) {
-						if (iSerial <= param.serial) {
-							iSerial = param.serial;
-						}
-					}
-					GameMain.Instance.EditingAlarmParam.serial = GameMain.Instance.m_AlarmData.list.Count + 1;
-					GameMain.Instance.m_AlarmData.list.Add (GameMain.Instance.EditingAlarmParam);
-				}
+		switch (m_eStep) {
+		case STEP.IDLE:
+			if (bInit) {
+				m_btnRepeat.TriggerClear ();
+				m_btnSnooze.TriggerClear ();
+				m_btnVoice.TriggerClear ();
+			}
+			if (m_btnRepeat.ButtonPushed) {
+				m_eStep = STEP.REPEAT;
+			} else if (m_btnSnooze.ButtonPushed) {
+				m_eStep = STEP.SNOOZE;
+			} else if (m_btnVoice.ButtonPushed) {
+				m_eStep = STEP.VOICE;
 			} else {
 			}
-			GameMain.Instance.m_AlarmData.Save ();
-			GameMain.Instance.TimeSetRefresh ();
+
+			if (ButtonPushed) {
+				TriggerClearAll ();
+				if (Index == 0) {
+					OutStart ();
+					// 面倒なので再読み込み
+				} else if (Index == 1) {
+					OutStart ();
+					// ここは保存
+					Debug.LogError (GameMain.Instance.EditingAlarmParam.serial);
+					GameMain.Instance.EditingAlarmParam.time = string.Format( "1982-10-10 {0:D2}:{1:D2}:00" , m_iHour , m_iMinute );
+
+					GameMain.Instance.m_AlarmData.Load (AlarmData.FILENAME);
+					if (0 < GameMain.Instance.EditingAlarmParam.serial) {
+						foreach (AlarmParam param in GameMain.Instance.m_AlarmData.list) {
+							if (param.serial == GameMain.Instance.EditingAlarmParam.serial) {
+								param.repeat_type = GameMain.Instance.EditingAlarmParam.repeat_type;
+								param.snooze = GameMain.Instance.EditingAlarmParam.snooze;
+								param.status = GameMain.Instance.EditingAlarmParam.status;
+								param.voice_type = GameMain.Instance.EditingAlarmParam.voice_type;
+								param.time = GameMain.Instance.EditingAlarmParam.time;
+							}
+						}
+					} else {
+						int iSerial = 0;
+						foreach (AlarmParam param in GameMain.Instance.m_AlarmData.list) {
+							if (iSerial <= param.serial) {
+								iSerial = param.serial;
+							}
+						}
+						GameMain.Instance.EditingAlarmParam.serial = GameMain.Instance.m_AlarmData.list.Count + 1;
+						GameMain.Instance.m_AlarmData.list.Add (GameMain.Instance.EditingAlarmParam);
+					}
+				} else {
+				}
+				GameMain.Instance.m_AlarmData.Save ();
+				GameMain.Instance.TimeSetRefresh ();
+			}
+
+			break;
+
+		case STEP.REPEAT:
+			if (bInit) {
+				m_btnRepeat.TriggerClear ();
+				m_PageRepeat.InStart (GameMain.Instance.EditingAlarmParam);
+			}
+			if (m_PageRepeat.ButtonPushed) {
+				m_PageRepeat.OutStart ();
+				m_PageRepeat.TriggerClearAll ();
+				m_eStep = STEP.IDLE;
+			}
+			break;
+		case STEP.SNOOZE:
+			if (bInit) {
+				m_btnSnooze.TriggerClear ();
+				m_PageSnooze.InStart (GameMain.Instance.EditingAlarmParam);
+			}
+			if (m_PageSnooze.ButtonPushed) {
+				m_PageSnooze.OutStart ();
+				m_PageSnooze.TriggerClearAll ();
+				m_eStep = STEP.IDLE;
+			}
+			if (m_PageSnooze.m_bmSnoozeType.ButtonPushed) {
+				//Debug.Log (string.Format ("Pushed:{0}", m_PageSnooze.m_bmSnoozeType.Index));
+				GameMain.Instance.EditingAlarmParam.snooze = m_PageSnooze.m_bmSnoozeType.Index;
+
+				m_PageSnooze.OutStart ();
+				m_PageSnooze.m_bmSnoozeType.TriggerClearAll ();
+				m_eStep = STEP.IDLE;
+			}
+			break;
+
+		case STEP.VOICE:
+			if (bInit) {
+				m_PageVoice.Initialize ();
+				m_PageVoice.InStart ();
+			}
+			int select_index = 0;
+			if (m_PageVoice.m_bmBannerListSelect.ButtonPushed) {
+				select_index = m_PageVoice.m_bmBannerListSelect.Index;
+				GameMain.Instance.EditingAlarmParam.voice_type = m_PageVoice.m_bannerList [select_index].m_csvVoiceData.id;
+				m_PageVoice.OutStart ();
+				m_eStep = STEP.IDLE;
+			}
+			else if (m_PageVoice.m_bmBannerShopSelect.ButtonPushed) {
+				select_index = m_PageVoice.m_bmBannerShopSelect.Index;
+
+				int shop_voice_id = m_PageVoice.m_bannerShop [select_index].m_csvVoiceData.id;
+
+				string product_id = "";
+				foreach (CsvVoiceData voice_data in DataManagerAlarm.Instance.master_voice_list) {
+					if (voice_data.id == shop_voice_id) {
+						product_id = voice_data.name_voice;
+					}
+				}
+				bool bGood = false;
+				foreach (string strPurchasedProductId in DataManagerAlarm.Instance.purchased_list) {
+					if (strPurchasedProductId.Equals (product_id) == true) {
+						bGood = true;
+					}
+				}
+				if (bGood) {
+					GameMain.Instance.EditingAlarmParam.voice_type = shop_voice_id;
+				}
+				m_PageVoice.OutStart ();
+				m_eStep = STEP.IDLE;
+			}
+
+			break;
+
+		case STEP.MAX:
+		default:
+			break;
+
 		}
 
 		paramRefresh (GameMain.Instance.EditingAlarmParam);

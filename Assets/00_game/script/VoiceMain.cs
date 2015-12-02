@@ -12,7 +12,9 @@ public class VoiceMain : PageBase {
 	public UIGrid m_gridStore;
 
 	public ButtonManager m_bmBannerList;
+	public ButtonManager m_bmBannerListSelect;
 	public ButtonManager m_bmBannerShop;
+	public ButtonManager m_bmBannerShopSelect;
 
 	public List<BannerList> m_bannerList = new List<BannerList> ();
 	public List<BannerShop> m_bannerShop = new List<BannerShop> ();
@@ -46,6 +48,7 @@ public class VoiceMain : PageBase {
 				BannerList script = obj.GetComponent<BannerList> ();
 				m_bmBannerList.AddButtonBaseList (obj);
 				script.Initialize (data);
+				m_bmBannerListSelect.AddButtonBaseList (script.m_goSelect);
 				m_bannerList.Add (script);
 
 			}
@@ -54,12 +57,15 @@ public class VoiceMain : PageBase {
 				BannerShop script = obj.GetComponent<BannerShop> ();
 				m_bmBannerShop.AddButtonBaseList (obj);
 				script.Initialize (data);
+				m_bmBannerShopSelect.AddButtonBaseList (script.m_goSelect);
 				m_bannerShop.Add (script);
 			} else {
 			}
 		}
 		m_bmBannerList.SetButtonbaseFromList ();
+		m_bmBannerListSelect.SetButtonbaseFromList ();
 		m_bmBannerShop.SetButtonbaseFromList ();
+		m_bmBannerShopSelect.SetButtonbaseFromList ();
 
 		m_gridList.enabled = true;
 		m_gridStore.enabled = true;
@@ -104,7 +110,9 @@ public class VoiceMain : PageBase {
 			banner.Reset ();
 		}
 		m_bmBannerList.TriggerClearAll ();
+		m_bmBannerListSelect.TriggerClearAll ();
 		m_bmBannerShop.TriggerClearAll ();
+		m_bmBannerShopSelect.TriggerClearAll ();
 		m_iListIndex = -1;
 		m_iShopIndex = -1;
 		SoundManager.Instance.StopAll (AUDIO_TYPE.SE);
@@ -120,7 +128,7 @@ public class VoiceMain : PageBase {
 		}
 
 		if (m_bmBannerList.ButtonPushed) {
-			Debug.Log (m_bmBannerList.Index);
+			//Debug.Log (m_bmBannerList.Index);
 			if (m_iListIndex != m_bmBannerList.Index ) {
 				if (0 <= m_iListIndex) {
 					m_bannerList [m_iListIndex].Reset ();

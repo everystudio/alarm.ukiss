@@ -34,11 +34,13 @@ public class PageRepeat : OtherPage {
 
 	}
 
+	/*
 	void Update(){
 		if (ButtonPushed) {
 			OutStart ();
 			TriggerClearAll ();
 		}
 	}
+	*/
 
 }

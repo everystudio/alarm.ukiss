@@ -51,6 +51,7 @@ public class PageSnooze : OtherPage {
 	}
 
 
+	/*
 	void Update(){
 		if (ButtonPushed) {
 			OutStart ();
@@ -65,5 +66,6 @@ public class PageSnooze : OtherPage {
 			m_bmSnoozeType.TriggerClearAll ();
 		}
 	}
+	*/
 
 }

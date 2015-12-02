@@ -187,7 +187,7 @@ public class GameMain : PageBase {
 
 	}
 	void Start(){
-
+		Screen.fullScreen = false;
 		instance = this;
 		EditingAlarmParam = new AlarmParam ();
 		m_iPagePre = 0;

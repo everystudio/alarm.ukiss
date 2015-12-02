@@ -41,6 +41,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 473358}
   - 114: {fileID: 11477004}
+  - 65: {fileID: 6560678}
+  - 114: {fileID: 11450534}
+  - 114: {fileID: 11492872}
+  - 114: {fileID: 11416604}
   m_Layer: 8
   m_Name: back
   m_TagString: Untagged
@@ -187,8 +191,20 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 640, y: 200, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 200, y: 200, z: 1}
+  m_Center: {x: -221.800003, y: 0, z: 0}
+--- !u!65 &6560678
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171582}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 440, y: 200, z: 0}
+  m_Center: {x: 100, y: 0, z: 0}
 --- !u!114 &11401428
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -322,6 +338,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollView: {fileID: 0}
   draggablePanel: {fileID: 0}
+--- !u!114 &11416604
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02842fa4878db54f9587ff4de7d9f2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollView: {fileID: 0}
+  draggablePanel: {fileID: 0}
 --- !u!114 &11425186
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -388,6 +417,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 182102}
+  functionName: OnClickButton
+  trigger: 0
+  includeChildren: 0
+--- !u!114 &11450534
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4c4ff40739c7904ca26c14ffbdc4176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 171582}
   functionName: OnClickButton
   trigger: 0
   includeChildren: 0
@@ -461,6 +505,7 @@ MonoBehaviour:
   m_switchSprite: {fileID: 11491964}
   m_sprStop: {fileID: 11453392}
   m_sprPlaying: {fileID: 11401428}
+  m_goSelect: {fileID: 171582}
   m_eStep: 0
   m_eStepPre: 0
   m_lbDescription: {fileID: 11415372}
@@ -537,6 +582,19 @@ MonoBehaviour:
   m_sprite: {fileID: 0}
   m_sprite2D: {fileID: 11425186}
   m_strSpriteName: 
+--- !u!114 &11492872
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6bd161639bec4b77b23c230ae3ca388, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_intIndex: 0
+  m_bButtonClicked: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

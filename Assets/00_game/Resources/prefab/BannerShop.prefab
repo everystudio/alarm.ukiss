@@ -76,6 +76,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 477184}
   - 114: {fileID: 11476962}
+  - 65: {fileID: 6557494}
+  - 114: {fileID: 11464310}
+  - 114: {fileID: 11480038}
+  - 114: {fileID: 11442962}
   m_Layer: 8
   m_Name: back
   m_TagString: Untagged
@@ -350,8 +354,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 640, y: 200, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 200, y: 200, z: 1}
+  m_Center: {x: -219.699997, y: 0, z: 0}
 --- !u!65 &6552028
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -363,6 +367,18 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 100, y: 50, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &6557494
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171046}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 640, y: 200, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &11404528
 MonoBehaviour:
@@ -500,6 +516,7 @@ MonoBehaviour:
   m_switchSprite: {fileID: 11447838}
   m_sprStop: {fileID: 11433190}
   m_sprPlaying: {fileID: 11496078}
+  m_goSelect: {fileID: 171046}
   m_eStep: 0
   m_eStepPre: 0
   m_lbDescription: {fileID: 11408000}
@@ -642,6 +659,19 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!114 &11442962
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02842fa4878db54f9587ff4de7d9f2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollView: {fileID: 0}
+  draggablePanel: {fileID: 0}
 --- !u!114 &11447838
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -794,6 +824,21 @@ MonoBehaviour:
   mFixedAspect: 0
   mPixelSize: 1
   nextSprite: {fileID: 0}
+--- !u!114 &11464310
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4c4ff40739c7904ca26c14ffbdc4176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 171046}
+  functionName: OnClickButton
+  trigger: 0
+  includeChildren: 0
 --- !u!114 &11471046
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -891,6 +936,19 @@ MonoBehaviour:
   functionName: OnClickButton
   trigger: 0
   includeChildren: 0
+--- !u!114 &11480038
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6bd161639bec4b77b23c230ae3ca388, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_intIndex: 0
+  m_bButtonClicked: 0
 --- !u!114 &11482604
 MonoBehaviour:
   m_ObjectHideFlags: 1

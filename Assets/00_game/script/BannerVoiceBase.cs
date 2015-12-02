@@ -9,6 +9,8 @@ public class BannerVoiceBase : BannerBase {
 	public UI2DSprite m_sprStop;
 	public UI2DSprite m_sprPlaying;
 
+	public GameObject m_goSelect;
+
 	public enum STEP
 	{
 		NONE		= 0,
