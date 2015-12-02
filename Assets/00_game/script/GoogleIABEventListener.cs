@@ -73,17 +73,18 @@ namespace Prime31
 	
 		void queryInventorySucceededEvent( List<GooglePurchase> purchases, List<GoogleSkuInfo> skus )
 		{
-			Debug.Log( string.Format( "queryInventorySucceededEvent. total purchases: {0}, total skus: {1}", purchases.Count, skus.Count ) );
+			//Debug.Log( string.Format( "queryInventorySucceededEvent. total purchases: {0}, total skus: {1}", purchases.Count, skus.Count ) );
 			DataManagerAlarm.Instance.purchased_list.Clear ();
 			foreach (GooglePurchase purchase in purchases) {
 				DataManagerAlarm.Instance.purchased_list.Add (purchase.productId);
-				Debug.LogError( string.Format( "productId:{0}" ,purchase.productId ));
+				//Debug.LogError( string.Format( "productId:{0}" ,purchase.productId ));
 			}
 			DataManagerAlarm.Instance.product_data_list = skus;
-
+			/*
 			foreach (GoogleSkuInfo info in DataManagerAlarm.Instance.product_data_list) {
 				Debug.LogError (string.Format ("product_id:{0}", info.productId));
 			}
+			*/
 
 			//Prime31.Utils.logObject( purchases );
 			//Prime31.Utils.logObject( skus );
