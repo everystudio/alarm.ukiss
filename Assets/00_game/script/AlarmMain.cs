@@ -64,7 +64,7 @@ public class AlarmMain : PageBase {
 		base.Close ();
 	}
 
-	public const float UPDTE_INTERVAL = 2.0f;
+	public const float UPDTE_INTERVAL = 0.5f;
 	public float m_fUpdateInterval;
 
 	void Update(){
