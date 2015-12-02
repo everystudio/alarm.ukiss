@@ -225,41 +225,60 @@ public class GameMain : PageBase {
 			m_PageFooter.TriggerClearAll ();
 		}
 
-		List <AlarmReserve> remove_list = new List<AlarmReserve>();
 		m_fCheckIntervalTime += Time.deltaTime;
 		if (2.0f < m_fCheckIntervalTime) {
 			m_fCheckIntervalTime -= 2.0f;
+			RemoveAlarm (true);
+		}
+	}
 
-			List<int> remove_index_list = new List<int> ();
-			int iRemoveNum = 0;
+	public void RemoveAlarm( bool _bCall ){
+		List <AlarmReserve> remove_list = new List<AlarmReserve>();
+		List<int> remove_index_list = new List<int> ();
+		int iRemoveNum = 0;
 
-			int iCount = 0;
-			foreach (AlarmReserve reserve_param in reserve_list) {
-				bool bRemove = false;
-				if (TimeManager.Instance.GetDiffNow (reserve_param.m_strTime).TotalSeconds < 0 ) {
-					bRemove = true;
-					iRemoveNum += 1;
-				}
-				if (bRemove) {
-					remove_list.Add (reserve_param);
-				}
+		int iCount = 0;
+		foreach (AlarmReserve reserve_param in reserve_list) {
+			if (TimeManager.Instance.GetDiffNow (reserve_param.m_strTime).TotalSeconds < 0 ) {
+				iRemoveNum += 1;
+				remove_list.Add (reserve_param);
 			}
-
-			foreach( AlarmReserve remove_param in remove_list ){
-				reserve_list.Remove( remove_param );
-			}
-
-			if (0 < iRemoveNum) {
-				Debug.LogError ("remove");
-				m_AlarmMain.setNextTimer (reserve_list);
-			}
-
-
 		}
 
+		int voice_type = 0;
+		foreach( AlarmReserve remove_param in remove_list ){
+			voice_type = remove_param.m_iVoiceType;
+			reserve_list.Remove( remove_param );
+		}
 
+		if (0 < iRemoveNum) {
+			Debug.LogError ("remove");
+			m_AlarmMain.setNextTimer (reserve_list);
 
+			if (_bCall) {
+				CallVoice (voice_type);
+			}
+		}
 
+		return;
+	}
+
+	public void CallVoice( int _iVliceType ){
+		List<string> sound_list = new List<string> ();
+
+		foreach (CsvVoicesetData data in DataManagerAlarm.Instance.master_voiceset_list) {
+			if (_iVliceType == data.id) {
+				sound_list.Add (data.name);
+			}
+		}
+		int iIndex = UtilRand.GetRand (sound_list.Count);
+		SoundManager.Instance.PlaySE ( sound_list[iIndex] );
+		return;
+	}
+	void OnApplicationPause(bool pauseStatus) {
+		if (pauseStatus == false) {
+			RemoveAlarm (false);
+		}
 	}
 
 	public void InitPage( PageBase _pageBase ){

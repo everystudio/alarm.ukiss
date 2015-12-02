@@ -70,6 +70,8 @@ public class BannerVoiceBase : BannerBase {
 			if (bInit) {
 				SoundManager.Instance.StopAll (AUDIO_TYPE.SE);
 
+				GameMain.Instance.CallVoice (m_csvVoiceData.id);
+				/*
 				List<string> sound_list = new List<string> ();
 
 				foreach (CsvVoicesetData data in DataManagerAlarm.Instance.master_voiceset_list) {
@@ -79,6 +81,7 @@ public class BannerVoiceBase : BannerBase {
 				}
 				int iIndex = UtilRand.GetRand (sound_list.Count);
 				SoundManager.Instance.PlaySE ( sound_list[iIndex] );
+				*/
 				m_sprStop.gameObject.SetActive (false);
 				m_sprPlaying.gameObject.SetActive (true);
 			}
