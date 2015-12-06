@@ -303,7 +303,7 @@ MonoBehaviour:
   mTrueTypeFont: {fileID: 12800000, guid: 898282f85c3564779bfbd07b7579218a, type: 3}
   mFont: {fileID: 0}
   mText: 01:23
-  mFontSize: 40
+  mFontSize: 24
   mFontStyle: 0
   mAlignment: 0
   mEncoding: 1
@@ -694,10 +694,10 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 3.4000001
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 12800000, guid: 898282f85c3564779bfbd07b7579218a, type: 3}
+  mTrueTypeFont: {fileID: 12800000, guid: 4872a07db2362418f8d3535c6fe43596, type: 3}
   mFont: {fileID: 0}
   mText: 01:23
-  mFontSize: 70
+  mFontSize: 54
   mFontStyle: 1
   mAlignment: 0
   mEncoding: 1
