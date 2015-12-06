@@ -236,7 +236,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 128, y: 50, z: 0}
+  m_Size: {x: 84, y: 84, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &6538926
 BoxCollider:
@@ -248,7 +248,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 128, y: 50, z: 0}
+  m_Size: {x: 84, y: 84, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &6563860
 BoxCollider:
@@ -260,7 +260,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 128, y: 50, z: 0}
+  m_Size: {x: 84, y: 84, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &11404570
 MonoBehaviour:
@@ -384,13 +384,13 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 128
-  mHeight: 50
+  mWidth: 84
+  mHeight: 84
   mDepth: 2
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 2.55999994
+  aspectRatio: 1
   mType: 0
   mFillDirection: 4
   mFillAmount: 1
@@ -464,13 +464,13 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 128
-  mHeight: 50
+  mWidth: 84
+  mHeight: 84
   mDepth: 7
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 2.55999994
+  aspectRatio: 1
   mType: 0
   mFillDirection: 4
   mFillAmount: 1
@@ -518,13 +518,13 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 128
-  mHeight: 50
+  mWidth: 84
+  mHeight: 84
   mDepth: 7
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 2.55999994
+  aspectRatio: 1
   mType: 0
   mFillDirection: 4
   mFillAmount: 1
@@ -633,12 +633,12 @@ MonoBehaviour:
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
   mWidth: 640
-  mHeight: 175
+  mHeight: 180
   mDepth: 0
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 3.65714288
+  aspectRatio: 3.55555558
   mType: 0
   mFillDirection: 4
   mFillAmount: 1
@@ -649,7 +649,7 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mSprite: {fileID: 21300000, guid: b7857e24d05304f4198209e9249dd9bd, type: 3}
+  mSprite: {fileID: 21300000, guid: ee556af53f3d34f48818e71c268d7130, type: 3}
   mMat: {fileID: 0}
   mShader: {fileID: 4800000, guid: e75727d9555d9d14ca51d91908c681bc, type: 3}
   mBorder: {x: 0, y: 0, z: 0, w: 0}

@@ -207,7 +207,7 @@ public class GameMain : PageBase {
 		kvs_data.WriteInt ("test", iTest );
 		kvs_data.Save ();
 		m_PageNow = m_PageBaseList [m_iPagePre];
-		InitPage (m_PageNow);
+		InitPage (m_PageNow , m_iPagePre);
 	}
 
 	public float m_fCheckIntervalTime;
@@ -219,7 +219,7 @@ public class GameMain : PageBase {
 
 				ClosePage (m_PageNow, m_iPagePre);
 				m_PageNow = m_PageBaseList [m_PageFooter.Index];
-				InitPage (m_PageNow);
+				InitPage (m_PageNow  , m_PageFooter.Index);
 				m_iPagePre = m_PageFooter.Index;
 			}
 			m_PageFooter.TriggerClearAll ();
@@ -281,10 +281,12 @@ public class GameMain : PageBase {
 		}
 	}
 
-	public void InitPage( PageBase _pageBase ){
+	public void InitPage( PageBase _pageBase , int _iPageIndex ){
 		//_obj.SetActive (true);
 		_pageBase.gameObject.transform.localPosition = Vector3.zero;
 		_pageBase.Initialize ();
+
+		m_PageFooter.SetIndex (_iPageIndex);
 	}
 
 	public void ClosePage(PageBase _pageBase , int _iIndex ){
