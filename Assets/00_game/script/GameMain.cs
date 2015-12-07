@@ -99,7 +99,7 @@ public class GameMain : PageBase {
 
 		DateTime datetimeNow = TimeManager.GetNow();
 		foreach (AlarmParam param in _alarmList) {
-			if (param.status == 0) {
+			if ( param.status <= 0) {
 				continue;
 			}
 			//Debug.Log ( string.Format( "serial:{0} repeat_type:{1}",param.serial,  param.repeat_type));

@@ -165,7 +165,7 @@ public class TimeEdit : OtherPage {
 			}
 
 			if (ButtonPushed) {
-				Debug.LogError (Index);
+				//Debug.LogError (Index);
 				TriggerClearAll ();
 				if (Index == 0) {
 					OutStart ();
@@ -201,14 +201,20 @@ public class TimeEdit : OtherPage {
 					OutStart ();
 					GameMain.Instance.EditingAlarmParam.time = string.Format ("1982-10-10 {0:D2}:{1:D2}:00", m_iHour, m_iMinute);
 					GameMain.Instance.m_AlarmData.Load (AlarmData.FILENAME);
+					//Debug.LogError (GameMain.Instance.EditingAlarmParam.serial);
 					if (0 < GameMain.Instance.EditingAlarmParam.serial) {
 						foreach (AlarmParam param in GameMain.Instance.m_AlarmData.list) {
+							//Debug.LogError (param.serial);
 							if (param.serial == GameMain.Instance.EditingAlarmParam.serial) {
 								param.status = -1;
 							}
 						}
 					} else {
 					}
+					GameMain.Instance.m_AlarmData.Save ();
+					GameMain.Instance.reserveTimeReset ();
+					GameMain.Instance.TimeSetRefresh ();
+
 				} else {
 				}
 				GameMain.Instance.m_AlarmData.Save ();
