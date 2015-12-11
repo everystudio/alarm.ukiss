@@ -121,3 +121,6 @@ AssetBundleManifest:
     Info_39:
       Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_all_02_illust.unity3d
       Dependencies: {}
+    Info_40:
+      Name: assets/assetbundleresource/sound/bgm/demo_song.unity3d
+      Dependencies: {}

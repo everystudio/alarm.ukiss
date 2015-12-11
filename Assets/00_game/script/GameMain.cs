@@ -173,7 +173,12 @@ public class GameMain : PageBase {
 			_insertList.Sort ((a, b) => (int)(a.m_lTime - b.m_lTime));
 		}
 		foreach (AlarmReserve reserve in _insertList) {
-			LocalNotificationManager.Instance.AddLocalNotification (reserve.m_lTime, ConfigManager.Instance.GetEditPlayerSettingsData ().projectData.m_strProductName, "時刻になりました");
+			LocalNotificationManager.Instance.AddLocalNotification (
+				reserve.m_lTime,
+				ConfigManager.Instance.GetEditPlayerSettingsData ().projectData.m_strProductName,
+				"時刻になりました" ,
+				GetAssetName( reserve.m_iVoiceType , true )
+			);
 		}
 
 		return;
@@ -263,16 +268,30 @@ public class GameMain : PageBase {
 		return;
 	}
 
-	public void CallVoice( int _iVliceType ){
-		List<string> sound_list = new List<string> ();
+	public string GetAssetName(int _iVliceType , bool _bAddPath = false ){
+		List<CsvVoicesetData> sound_list = new List<CsvVoicesetData> ();
 
 		foreach (CsvVoicesetData data in DataManagerAlarm.Instance.master_voiceset_list) {
 			if (_iVliceType == data.id) {
-				sound_list.Add (data.name);
+				sound_list.Add (data);
 			}
 		}
 		int iIndex = UtilRand.GetRand (sound_list.Count);
-		SoundManager.Instance.PlaySE ( sound_list[iIndex] );
+
+		CsvVoicesetData use_data = sound_list [iIndex];
+
+		string strRet = "";
+		if (_bAddPath == false) {
+			strRet = use_data.name;
+		} else {
+			strRet = string.Format( "{0}/{1}.{2}" , use_data.path , use_data.name , use_data.kakucho );
+		}
+		return strRet;
+	}
+
+	public void CallVoice( int _iVoiceType ){
+		string strFilename = GetAssetName (_iVoiceType);
+		SoundManager.Instance.PlaySE ( strFilename );
 		return;
 	}
 	void OnApplicationPause(bool pauseStatus) {
