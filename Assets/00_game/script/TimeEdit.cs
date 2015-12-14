@@ -260,7 +260,11 @@ public class TimeEdit : OtherPage {
 				m_PageVoice.InStart ();
 			}
 			int select_index = 0;
-			if (m_PageVoice.m_bmBannerListSelect.ButtonPushed) {
+			if (m_PageVoice.ButtonPushed) {
+				m_PageVoice.OutStart ();
+				m_eStep = STEP.IDLE;
+			}
+			else if (m_PageVoice.m_bmBannerListSelect.ButtonPushed) {
 				select_index = m_PageVoice.m_bmBannerListSelect.Index;
 				GameMain.Instance.EditingAlarmParam.voice_type = m_PageVoice.m_bannerList [select_index].m_csvVoiceData.id;
 				m_PageVoice.OutStart ();

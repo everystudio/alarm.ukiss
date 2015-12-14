@@ -9,6 +9,8 @@ public class TimeSet : OtherPage {
 
 	public TimeEdit m_TimeEdit;
 
+	public UIScrollView m_scrollView;
+
 	public List<BannerTimer> m_BannerTimerList = new List<BannerTimer> ();
 
 	public void DisplayReflresh(){
@@ -20,6 +22,7 @@ public class TimeSet : OtherPage {
 		m_BannerTimerList.Clear ();
 		GameMain.Instance.m_AlarmData.Load (AlarmData.FILENAME);
 		GameObject prefBannerTimer = PrefabManager.Instance.PrefabLoadInstance ("prefab/BannerTimer");
+
 		foreach (AlarmParam param in GameMain.Instance.m_AlarmData.list) {
 
 			// マイナスは非表示
@@ -43,6 +46,11 @@ public class TimeSet : OtherPage {
 
 				m_BannerTimerList.Add (bt);
 			}
+		}
+		if (6 <= m_BannerTimerList.Count) {
+			m_scrollView.enabled = true;
+		} else {
+			m_scrollView.enabled = false;
 		}
 		GameMain.Instance.m_AlarmData.Save ();
 		m_Grid.enabled = true;
