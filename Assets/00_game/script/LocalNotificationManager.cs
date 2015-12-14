@@ -73,9 +73,10 @@ public class LocalNotificationManager : MonoBehaviour {
 		}
 	}
 
+	const int MAX_LOCALNOTIFICATE_NUM = 100;
 	public void ClearLocalNotification(){
 		if (m_plugin2 != null) {
-			for (int i = 0; i < m_iLocalNotificationIndex; i++) {
+			for (int i = 0; i < MAX_LOCALNOTIFICATE_NUM; i++) {
 				m_plugin2.Call ("clearNotification", i + 1);
 			}
 		}

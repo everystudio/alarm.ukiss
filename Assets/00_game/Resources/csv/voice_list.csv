@@ -1,9 +1,15 @@
 id,type,name,description,name_icon,name_voice
-1,1,全体ボイス１,全体ボイス１,kiss_all_01_icon,voice_001
-2,1,全体ボイス２,全体ボイス２,kiss_all_02_icon,voice_002
-3,2,男性１ボイス,男性１ボイス,kiss_member01_01_icon,item.test.alarm.school.voice001
-4,2,男性２ボイス,男性２ボイス,kiss_member02_01_icon,item.test.alarm.school.voice002
-5,2,男性３ボイス,男性３ボイス,kiss_member03_01_icon,item.test.alarm.school.voice003
-6,2,男性４ボイス,男性４ボイス,kiss_member04_01_icon,item.test.alarm.school.voice004
-7,2,男性５ボイス,男性５ボイス,kiss_member05_01_icon,item.test.alarm.school.voice005
-8,2,男性６ボイス,男性６ボイス,kiss_member06_01_icon,item.test.alarm.school.voice005
+1,1,-----,目覚ましアラーム U-KISS（無料）,kiss_all_01_icon,voice_001
+2,1,-----,目覚ましアラーム アラーム音（無料）,kiss_all_02_icon,voice_002
+3,2,Ver.スヒョン,目覚ましアラーム 恋人（BASIC）編,kiss_member01_01_icon,item.test.alarm.school.voice001
+4,2,Ver.キソプ,目覚ましアラーム 恋人（BASIC）編,kiss_member02_01_icon,item.test.alarm.school.voice002
+5,2,Ver.イライ,目覚ましアラーム 恋人（BASIC）編,kiss_member03_01_icon,item.test.alarm.school.voice003
+6,2,Ver.フン,目覚ましアラーム 恋人（BASIC）編,kiss_member04_01_icon,item.test.alarm.school.voice004
+7,2,Ver.ケビン,目覚ましアラーム 恋人（BASIC）編,kiss_member05_01_icon,item.test.alarm.school.voice005
+8,2,Ver.ジュン,目覚ましアラーム 恋人（BASIC）編,kiss_member06_01_icon,item.test.alarm.school.voice005
+9,2,Ver.スヒョン,目覚ましアラーム 恋人（スウィート）編,kiss_member01_01_icon,item.test.alarm.school.voice001
+10,2,Ver.キソプ,目覚ましアラーム 恋人（スウィート）編,kiss_member02_01_icon,item.test.alarm.school.voice002
+11,2,Ver.イライ,目覚ましアラーム 恋人（スウィート）編,kiss_member03_01_icon,item.test.alarm.school.voice003
+12,2,Ver.フン,目覚ましアラーム 恋人（スウィート）編,kiss_member04_01_icon,item.test.alarm.school.voice004
+13,2,Ver.ケビン,目覚ましアラーム 恋人（スウィート）編,kiss_member05_01_icon,item.test.alarm.school.voice005
+14,2,Ver.ジュン,目覚ましアラーム 恋人（スウィート）編,kiss_member06_01_icon,item.test.alarm.school.voice005

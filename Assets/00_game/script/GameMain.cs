@@ -113,6 +113,7 @@ public class GameMain : PageBase {
 				if (0 < time_span.TotalSeconds) {
 					insert_data.m_strTime = strCheckDate;
 					insert_data.m_iVoiceType = param.voice_type;
+					insert_data.m_iSnoozeType = param.snooze;
 					insert_data.m_lTime = (long)TimeManager.Instance.GetDiffNow (insert_data.m_strTime).TotalSeconds;
 					_insertList.Add (insert_data);
 				} else {
@@ -161,6 +162,7 @@ public class GameMain : PageBase {
 							AlarmReserve insert_data = new AlarmReserve ();
 							insert_data.m_strTime = strNext;
 							insert_data.m_iVoiceType = param.voice_type;
+							insert_data.m_iSnoozeType = param.snooze;
 							insert_data.m_lTime = (long)TimeManager.Instance.GetDiffNow (insert_data.m_strTime).TotalSeconds;
 							_insertList.Add (insert_data);
 
@@ -172,13 +174,34 @@ public class GameMain : PageBase {
 			}
 			_insertList.Sort ((a, b) => (int)(a.m_lTime - b.m_lTime));
 		}
+
 		foreach (AlarmReserve reserve in _insertList) {
-			LocalNotificationManager.Instance.AddLocalNotification (
-				reserve.m_lTime,
-				ConfigManager.Instance.GetEditPlayerSettingsData ().projectData.m_strProductName,
-				"時刻になりました" ,
-				GetAssetName( reserve.m_iVoiceType , true )
-			);
+			int iLoop = 1;
+
+			long lOffset = 0;
+			switch (reserve.m_iSnoozeType) {
+			case 1:
+				iLoop = 10;
+				lOffset = 5 * 60;
+				break;
+			case 2:
+				iLoop = 5;
+				lOffset = 10 * 60;
+				break;
+			default:
+				iLoop = 1;
+				lOffset = 0;
+				break;
+			}
+
+			for (int i = 0; i < iLoop; i++) {
+				LocalNotificationManager.Instance.AddLocalNotification (
+					reserve.m_lTime + i*lOffset,
+					ConfigManager.Instance.GetEditPlayerSettingsData ().projectData.m_strProductName,
+					"時刻になりました",
+					GetAssetName (reserve.m_iVoiceType, true)
+				);
+			}
 		}
 
 		return;
