@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.IO;
 
 public class SpecialMain : PageBase {
 
@@ -63,6 +64,7 @@ public class SpecialMain : PageBase {
 
 	public EveryStudioLibrary.TNetworkData m_tNetworkData;
 	public string m_strLimitTime;
+	public string m_strTitle;
 
 	public AudioChannelData m_AudioChannelData;
 
@@ -124,7 +126,12 @@ public class SpecialMain : PageBase {
 					// 過去ならなんでもいい
 					m_strLimitTime = "2015-10-10 10:10:10";
 				} else {
-					m_strLimitTime = EveryStudioLibrary.CommonNetwork.Instance.GetString (m_iNetworkSerial);
+					string strRead = EveryStudioLibrary.CommonNetwork.Instance.GetString (m_iNetworkSerial);
+					StringReader sr = new StringReader (strRead);
+					m_strLimitTime = sr.ReadLine ();
+					m_strTitle = sr.ReadLine ();
+					m_lbTitle.text = m_strTitle;
+					sr.Close ();
 				}
 				//m_strLimitTime = "2015-10-10 10:10:10";
 				m_bClose = false;
