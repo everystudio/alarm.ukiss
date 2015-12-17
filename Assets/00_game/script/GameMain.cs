@@ -92,7 +92,7 @@ public class GameMain : PageBase {
 	}
 	public List<AlarmReserve> reserve_list = new List<AlarmReserve> ();
 
-	public void setupAlarmReserve( ref List<AlarmReserve> _insertList , List<AlarmParam> _alarmList ){
+	public void setupAlarmReserve( ref List<AlarmReserve> _insertList , List<AlarmParam> _alarmList , bool _bSnooze ){
 
 		LocalNotificationManager.Instance.ClearLocalNotification ();
 		_insertList.Clear ();
@@ -180,11 +180,11 @@ public class GameMain : PageBase {
 
 			long lOffset = 0;
 			switch (reserve.m_iSnoozeType) {
-			case 1:
+			case 0:
 				iLoop = 10;
 				lOffset = 5 * 60;
 				break;
-			case 2:
+			case 1:
 				iLoop = 5;
 				lOffset = 10 * 60;
 				break;
@@ -192,6 +192,10 @@ public class GameMain : PageBase {
 				iLoop = 1;
 				lOffset = 0;
 				break;
+			}
+			// アプリ起動中はスヌーズしない
+			if (_bSnooze == false) {
+				iLoop = 1;
 			}
 
 			for (int i = 0; i < iLoop; i++) {
@@ -208,9 +212,9 @@ public class GameMain : PageBase {
 	}
 
 
-	public void reserveTimeReset(){
+	public void reserveTimeReset( bool _bSnooze = false ){
 		m_AlarmData.Load (AlarmData.FILENAME);
-		setupAlarmReserve (ref reserve_list, m_AlarmData.list);
+		setupAlarmReserve (ref reserve_list, m_AlarmData.list , _bSnooze );
 		m_AlarmMain.setNextTimer (reserve_list);
 
 	}
@@ -320,6 +324,8 @@ public class GameMain : PageBase {
 	void OnApplicationPause(bool pauseStatus) {
 		if (pauseStatus == false) {
 			RemoveAlarm (false);
+		} else {
+			reserveTimeReset (true);
 		}
 	}
 

@@ -30,6 +30,7 @@ public class SpecialMain : PageBase {
 	public enum STEP {
 		NONE		= 0,
 		LOADING		,
+		LIMIT_CHECK	,
 		PAUSE		,
 		PLAYING		,
 		MAX			,
@@ -53,12 +54,19 @@ public class SpecialMain : PageBase {
 	public Camera m_useCamera;
 	public float m_fPitch;
 
+	public bool m_bClose;
+	public GameObject m_goLimit;
+
 
 	public float m_fTimer;
 	public float m_fTimerMax;
 
+	public EveryStudioLibrary.TNetworkData m_tNetworkData;
+	public string m_strLimitTime;
 
 	public AudioChannelData m_AudioChannelData;
+
+	int m_iNetworkSerial;
 
 	void Start(){
 		foreach (CsvVoiceData data in DataManagerAlarm.Instance.master_voice_list) {
@@ -66,9 +74,10 @@ public class SpecialMain : PageBase {
 				Debug.LogError (data.id);
 			}
 		}
-		m_AudioChannelData = SoundManager.Instance.PlayBGM ("demo_song");
-		m_eStep = STEP.LOADING;
+		//m_eStep = STEP.LOADING;
+		m_eStep = STEP.LIMIT_CHECK;
 		m_eStepPre = STEP.MAX;
+		m_iNetworkSerial = EveryStudioLibrary.CommonNetwork.Instance.Recieve ("http://ad.xnosserver.com/apps/myzoo_data/test.txt");
 	}
 
 	void Update(){
@@ -105,26 +114,52 @@ public class SpecialMain : PageBase {
 		case STEP.NONE:
 			return;
 			break;
+
+		case STEP.LIMIT_CHECK:
+			if (EveryStudioLibrary.CommonNetwork.Instance.IsConnected (m_iNetworkSerial) == true) {
+
+				EveryStudioLibrary.TNetworkData network_data = EveryStudioLibrary.CommonNetwork.Instance.GetData (m_iNetworkSerial);
+				if (network_data.IsError ()) {
+					m_strLimitTime = TimeManager.StrNow ();
+					// 過去ならなんでもいい
+					m_strLimitTime = "2015-10-10 10:10:10";
+				} else {
+					m_strLimitTime = EveryStudioLibrary.CommonNetwork.Instance.GetString (m_iNetworkSerial);
+				}
+				//m_strLimitTime = "2015-10-10 10:10:10";
+				m_bClose = false;
+				//Debug.Log (TimeManager.Instance.GetDiffNow (m_strLimitTime).TotalSeconds);
+				// 比較して過去だとマイナスになる
+				m_eStep = STEP.MAX;
+				if ( TimeManager.Instance.GetDiffNow (m_strLimitTime).TotalSeconds < 0) {
+					m_bClose = true;
+					m_goLimit.SetActive (m_bClose);
+					m_eStep = STEP.LOADING;
+				}
+			} else {
+			}
+			break;
+
 		case STEP.LOADING:
 			if (bInit) {
+				m_AudioChannelData = SoundManager.Instance.PlayBGM ("demo_song");
 				m_btnPause.gameObject.SetActive (false);
 				m_btnPlay.gameObject.SetActive (true);
 			}
 			if (m_AudioChannelData.m_tAudioSource.isPlaying) {
-				m_bLoaded = true;
 
 				m_fTimer = m_AudioChannelData.m_tAudioSource.time;
 				m_fTimerMax = m_AudioChannelData.m_tAudioSource.clip.length;
 				m_AudioChannelData.m_tAudioSource.Stop ();
 				m_eStep = STEP.PAUSE;
-
-
 			} else {
 			}
 			break;
 
+
 		case STEP.PAUSE:
 			if (bInit) {
+				m_bLoaded = true;
 				m_btnPause.gameObject.SetActive (false);
 				m_btnPlay.gameObject.SetActive (true);
 				//m_AudioChannelData.m_tAudioSource.pitch = 0.0f;

@@ -10,8 +10,8 @@ PlayerSettings:
   targetResolution: 0
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: EveryStudio
-  productName: "\u6642\u8A08\u30A2\u30D7\u30EA"
+  companyName: WPS,Inc.
+  productName: "U-KISS \u76EE\u899A\u307E\u3057"
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_ShowUnitySplashScreen: 1
@@ -85,8 +85,8 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleIdentifier: test.everystudio.alarm.school
-  bundleVersion: 0.0.1
+  bundleIdentifier: jp.appr.ukissalarm
+  bundleVersion: 1.0.0
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
@@ -149,8 +149,8 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: xnospass.keystore
-  AndroidKeyaliasName: xnos.s.inc@gmail.com
+  AndroidKeystoreName: ukiss.keystore
+  AndroidKeyaliasName: ukiss.alias
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
   androidEnableBanner: 1
