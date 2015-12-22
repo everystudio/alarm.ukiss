@@ -69,7 +69,12 @@ public class BannerShop : BannerVoiceBase {
 
 		if (m_btnBuy.ButtonPushed) {
 			m_btnBuy.TriggerClear ();
+			Debug.Log (string.Format ("purchace_id:{0}", m_csvVoiceData.name_voice));
+			#if RAKUTEN
+			RakutenBilling.Instance.purchaseProduct(m_csvVoiceData.name_voice);
+			#else
 			GoogleIAB.purchaseProduct( m_csvVoiceData.name_voice );
+			#endif
 		}
 	}
 

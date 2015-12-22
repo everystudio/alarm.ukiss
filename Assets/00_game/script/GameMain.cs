@@ -28,6 +28,7 @@ public class GameMain : PageBase {
 	public AlarmMain m_AlarmMain;
 	public AlarmParam EditingAlarmParam;
 	public AlarmData m_AlarmData = new AlarmData ();
+	public TimeComing m_timeComing;
 
 	public VoiceMain m_VoiceMain;
 	public void Purchase( string _strProductId ){
@@ -92,7 +93,7 @@ public class GameMain : PageBase {
 	}
 	public List<AlarmReserve> reserve_list = new List<AlarmReserve> ();
 
-	public void setupAlarmReserve( ref List<AlarmReserve> _insertList , List<AlarmParam> _alarmList , bool _bSnooze ){
+	private void setupAlarmReserve( ref List<AlarmReserve> _insertList , List<AlarmParam> _alarmList , bool _bSnooze ){
 
 		LocalNotificationManager.Instance.ClearLocalNotification ();
 		_insertList.Clear ();
@@ -175,36 +176,39 @@ public class GameMain : PageBase {
 			_insertList.Sort ((a, b) => (int)(a.m_lTime - b.m_lTime));
 		}
 
-		foreach (AlarmReserve reserve in _insertList) {
-			int iLoop = 1;
+		// アプリ起動中おセットはローカル通知あしない
+		if (_bSnooze == true) {
+			foreach (AlarmReserve reserve in _insertList) {
+				int iLoop = 1;
 
-			long lOffset = 0;
-			switch (reserve.m_iSnoozeType) {
-			case 0:
-				iLoop = 10;
-				lOffset = 5 * 60;
-				break;
-			case 1:
-				iLoop = 5;
-				lOffset = 10 * 60;
-				break;
-			default:
-				iLoop = 1;
-				lOffset = 0;
-				break;
-			}
-			// アプリ起動中はスヌーズしない
-			if (_bSnooze == false) {
-				iLoop = 1;
-			}
+				long lOffset = 0;
+				switch (reserve.m_iSnoozeType) {
+				case 0:
+					iLoop = 10;
+					lOffset = 5 * 60;
+					break;
+				case 1:
+					iLoop = 5;
+					lOffset = 10 * 60;
+					break;
+				default:
+					iLoop = 1;
+					lOffset = 0;
+					break;
+				}
+				// アプリ起動中はスヌーズしない
+				if (_bSnooze == false) {
+					iLoop = 1;
+				}
 
-			for (int i = 0; i < iLoop; i++) {
-				LocalNotificationManager.Instance.AddLocalNotification (
-					reserve.m_lTime + i*lOffset,
-					ConfigManager.Instance.GetEditPlayerSettingsData ().projectData.m_strProductName,
-					"時刻になりました",
-					GetAssetName (reserve.m_iVoiceType, true)
-				);
+				for (int i = 0; i < iLoop; i++) {
+					LocalNotificationManager.Instance.AddLocalNotification (
+						reserve.m_lTime + i * lOffset,
+						ConfigManager.Instance.GetEditPlayerSettingsData ().projectData.m_strProductName,
+						"時刻になりました",
+						GetAssetName (reserve.m_iVoiceType, true)
+					);
+				}
 			}
 		}
 
@@ -223,9 +227,9 @@ public class GameMain : PageBase {
 		instance = this;
 		EditingAlarmParam = new AlarmParam ();
 		m_iPagePre = 0;
-
+		m_timeComing.TriggerClear ();
+		m_timeComing.gameObject.SetActive (false);
 		string key = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwoEtQFcqjLFQJ0wXu8mkFjowH8t4I7tcG1G6Ais7Vx8qZWYidwNPzdp2pvPCQS4/BZDgtRyk1+FsPbaCOndof2e4OlVmdlGUXVQOtJl5hT40xxmlotliBG9IzO1A5Huvy0tjv2pQ6Et0g72k1qxJPFI1O/L7mzQDHPzawYEqHv47U/yGD1GTE6jHK0u1apgxUI89UJsiYIhVlwdZ40390LGWAR8+LrUhk+q//NYjxfKBd3fotgV4QZecNPQks1fz9bk5oWOwOpOz2pQ3aZ62RInlueAk8ttsfow6+M4rmdfBDVGOkVKgScwhBjeCAcsXQaO+qwWdr1GhLPNuYck39wIDAQAB";
-
 		GoogleIAB.init (key);
 
 		if (m_AlarmData == null) {
@@ -262,6 +266,13 @@ public class GameMain : PageBase {
 			m_fCheckIntervalTime -= 2.0f;
 			RemoveAlarm (true);
 		}
+
+		if (m_timeComing.ButtonPushed) {
+			m_timeComing.TriggerClear ();
+			m_timeComing.gameObject.SetActive (false);
+			SoundManager.Instance.StopAll (AUDIO_TYPE.SE);
+		}
+
 	}
 
 	public void RemoveAlarm( bool _bCall ){
@@ -288,6 +299,8 @@ public class GameMain : PageBase {
 			m_AlarmMain.setNextTimer (reserve_list);
 
 			if (_bCall) {
+				m_timeComing.gameObject.SetActive (true);
+				m_timeComing.Appear ();
 				CallVoice (voice_type);
 			}
 		}

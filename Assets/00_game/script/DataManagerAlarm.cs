@@ -84,7 +84,7 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 		}
 		return new CsvVoiceData ();
 	}
-	public List<GoogleSkuInfo> product_data_list = new List<GoogleSkuInfo> ();
+	//public List<GoogleSkuInfo> product_data_list = new List<GoogleSkuInfo> ();
 	public List<string> purchased_list = new List<string> ();
 }
 

@@ -1,0 +1,16 @@
+ManifestFileVersion: 0
+CRC: 1325040561
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d274f040ec295e42e0a438f4327bb84d
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c516f2a3b2b6b67ef759f6410a790acd
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+Assets:
+- Assets/AssetBundleResource/voice/xnos/ukiss/item.alarm.ukiss.voice007/item.alarm.ukiss.voice007_5.mp3
+Dependencies: []

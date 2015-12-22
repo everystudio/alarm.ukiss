@@ -79,7 +79,7 @@ public class SpecialMain : PageBase {
 		//m_eStep = STEP.LOADING;
 		m_eStep = STEP.LIMIT_CHECK;
 		m_eStepPre = STEP.MAX;
-		m_iNetworkSerial = EveryStudioLibrary.CommonNetwork.Instance.Recieve ("http://ad.xnosserver.com/apps/myzoo_data/test.txt");
+		m_iNetworkSerial = EveryStudioLibrary.CommonNetwork.Instance.Recieve ("http://ad.xnosserver.com/apps/ukisswakeup_android/test.txt");
 	}
 
 	void Update(){
@@ -149,7 +149,7 @@ public class SpecialMain : PageBase {
 
 		case STEP.LOADING:
 			if (bInit) {
-				m_AudioChannelData = SoundManager.Instance.PlayBGM ("demo_song");
+				m_AudioChannelData = SoundManager.Instance.PlayBGM ("freakyf");
 				m_btnPause.gameObject.SetActive (false);
 				m_btnPlay.gameObject.SetActive (true);
 			}

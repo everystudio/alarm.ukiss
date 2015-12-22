@@ -1,0 +1,16 @@
+ManifestFileVersion: 0
+CRC: 3674616934
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d8ec5440fff42d450fff278d0d0d3d62
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c516f2a3b2b6b67ef759f6410a790acd
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+Assets:
+- Assets/AssetBundleResource/voice/xnos/ukiss/voice_001/voice_001_1.mp3
+Dependencies: []

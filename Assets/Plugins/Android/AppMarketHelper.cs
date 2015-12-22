@@ -80,26 +80,30 @@ public class AppMarketHelper : MonoBehaviour {
 	string CallbackMessage = "";
 	int CallbackPacketCnt = 0;
 	int CallbackPacketIdx = 0;
-	
-	void Awake()
-	{
-		DebugLogger.Log("AppMarketHelper.Awake");
+
+	public void handling_awake(){
+		Debug.Log("AppMarketHelper.Awake");
 
 		// Save a reference as the singleton instance
 		Instance = this;
-		
-		DebugLogger.Log("AppMarketHelper.Awake loading jar");
+
+		Debug.Log("AppMarketHelper.Awake loading jar");
 
 		ActivityCls = new AndroidJavaClass ("jp.co.rakuten.appmarket.unitysdk.AppMarketActivity");
 		ActivityObj = ActivityCls.CallStatic<AndroidJavaObject> ("getInstance");
 
 		PackageName = ActivityObj.Call<string> ("getPackageName");
 
-#if DEBUG
+		#if DEBUG
 		ActivityObj.Call("setRunningAsDebug");
-#endif
+		#endif
 
-		DebugLogger.Log("AppMarketHelper.Awake loading jar done");
+		Debug.Log("AppMarketHelper.Awake loading jar done");
+	}
+	
+	void Awake()
+	{
+		handling_awake ();
 	}
 	
 	AppMarketHelperCallback StoredCallback;
@@ -165,7 +169,7 @@ public class AppMarketHelper : MonoBehaviour {
     
     public void RakutenAppMarketHelperRawCallback(string packet)
 	{
-		DebugLogger.Log("AppMarketHelper.RakutenAppMarketHelperRawCallback " + packet);
+		Debug.LogError("AppMarketHelper.RakutenAppMarketHelperRawCallback " + packet);
 		
 		if (StoredCallback == null) {
 			DebugLogger.Log ("Callback is not ready.");

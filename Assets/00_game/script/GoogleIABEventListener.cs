@@ -79,7 +79,7 @@ namespace Prime31
 				DataManagerAlarm.Instance.purchased_list.Add (purchase.productId);
 				//Debug.LogError( string.Format( "productId:{0}" ,purchase.productId ));
 			}
-			DataManagerAlarm.Instance.product_data_list = skus;
+			//DataManagerAlarm.Instance.product_data_list = skus;
 			/*
 			foreach (GoogleSkuInfo info in DataManagerAlarm.Instance.product_data_list) {
 				Debug.LogError (string.Format ("product_id:{0}", info.productId));
