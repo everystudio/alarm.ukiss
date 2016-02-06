@@ -94,8 +94,9 @@ public class GameMain : PageBase {
 	public List<AlarmReserve> reserve_list = new List<AlarmReserve> ();
 
 	private void setupAlarmReserve( ref List<AlarmReserve> _insertList , List<AlarmParam> _alarmList , bool _bSnooze ){
-
+		#if UNITY_ANDROID && !UNITY_EDITOR
 		LocalNotificationManager.Instance.ClearLocalNotification ();
+		#endif
 		_insertList.Clear ();
 
 		DateTime datetimeNow = TimeManager.GetNow();
@@ -200,6 +201,7 @@ public class GameMain : PageBase {
 				if (_bSnooze == false) {
 					iLoop = 1;
 				}
+				Debug.Log (string.Format ("loopnum={0}", iLoop));
 
 				for (int i = 0; i < iLoop; i++) {
 					LocalNotificationManager.Instance.AddLocalNotification (
@@ -235,6 +237,7 @@ public class GameMain : PageBase {
 		if (m_AlarmData == null) {
 			m_AlarmData = new AlarmData ();
 		}
+		Debug.LogError ("kokohere");
 		reserveTimeReset ();
 
 		kvs_data.Load (KvsData.FILE_NAME);
@@ -269,13 +272,14 @@ public class GameMain : PageBase {
 
 		if (m_timeComing.ButtonPushed) {
 			m_timeComing.TriggerClear ();
-			m_timeComing.gameObject.SetActive (false);
+			m_timeComing.Disappear ();
+			//m_timeComing.gameObject.SetActive (false);
 			SoundManager.Instance.StopAll (AUDIO_TYPE.SE);
 		}
 
 	}
 
-	public void RemoveAlarm( bool _bCall ){
+	private void RemoveAlarm( bool _bCall ){
 		List <AlarmReserve> remove_list = new List<AlarmReserve>();
 		List<int> remove_index_list = new List<int> ();
 		int iRemoveNum = 0;
@@ -297,10 +301,10 @@ public class GameMain : PageBase {
 		if (0 < iRemoveNum) {
 			Debug.LogError ("remove");
 			m_AlarmMain.setNextTimer (reserve_list);
+			m_timeComing.gameObject.SetActive (true);
+			m_timeComing.Appear ();
 
 			if (_bCall) {
-				m_timeComing.gameObject.SetActive (true);
-				m_timeComing.Appear ();
 				CallVoice (voice_type);
 			}
 		}

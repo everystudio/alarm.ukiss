@@ -114,12 +114,15 @@ public class LocalNotificationManager : MonoBehaviour {
 	}
 	*/
 
+	public void sound_stop(){
+		Debug.LogError ("call STOP");
+		m_plugin2.Call ("sendNotification", (long)1, 10, "dummy_title", "dummy_title", "dummy_message" , "stop" );
+	}
+
 	private List<int> localnotificate_list = new List<int> ();
 	void OnApplicationPause(bool pauseStatus) {
 		// ローカル通知用
-
 		#if UNITY_ANDROID && !UNITY_EDITOR
-		m_plugin2.Call ("sendNotification", (long)1, 10, "dummy_title", "dummy_title", "dummy_message" , "stop" );
 		//m_plugin2.Call ("sendNotification", _lTime, m_iLocalNotificationIndex, _strTitle, _strTitle, _strMessage , permissive );
 		#endif
 		if (pauseStatus) {

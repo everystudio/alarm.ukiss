@@ -96,6 +96,7 @@ public class VoiceMain : PageBase {
 	public override void Close ()
 	{
 		base.Close ();
+		SoundManager.Instance.StopAll (AUDIO_TYPE.SE);
 
 		m_eStep = STEP.CLOSE;
 

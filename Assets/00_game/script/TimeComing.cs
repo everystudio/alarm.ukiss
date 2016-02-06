@@ -10,6 +10,8 @@ public class TimeComing : ButtonBase {
 
 	public void Disappear(){
 		TweenAlphaAll (gameObject, 0.3f, 0.0f);
+
+		LocalNotificationManager.Instance.sound_stop ();
 	}
 
 }

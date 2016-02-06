@@ -287,11 +287,13 @@ public class TimeEdit : OtherPage {
 						bGood = true;
 					}
 				}
+
 				if (bGood) {
 					GameMain.Instance.EditingAlarmParam.voice_type = shop_voice_id;
+					m_PageVoice.OutStart ();
+					m_eStep = STEP.IDLE;
 				}
-				m_PageVoice.OutStart ();
-				m_eStep = STEP.IDLE;
+				m_PageVoice.m_bmBannerShopSelect.TriggerClearAll ();
 			}
 
 			break;
