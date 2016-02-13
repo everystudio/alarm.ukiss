@@ -9,12 +9,13 @@ public class CsvVoiceData : CsvDataParam
 	public string description { get; private set; }
 	public string name_icon { get; private set; }
 	public string name_voice { get; private set; }
+	public string release_date { get; private set; }
 }
 
 
 public class CsvVoice : CsvData<CsvVoiceData> {
-	private static readonly string FilePath = "csv/voice_list";
-	public void Load() { LoadResources(FilePath); }
+	private static readonly string FilePath = "voice_list";
+	public void Load() { Load(FilePath); }
 }
 
 

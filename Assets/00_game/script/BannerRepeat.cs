@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+#pragma warning disable 0675
 
 public class BannerRepeat : BannerBase {
 
@@ -30,7 +31,6 @@ public class BannerRepeat : BannerBase {
 		m_btnTrigger.TriggerClear ();
 		m_iIndex = _iIndex;
 	}
-
 	void Update(){
 
 		if (m_btnTrigger.ButtonPushed) {
@@ -44,6 +44,7 @@ public class BannerRepeat : BannerBase {
 			} else {
 				GameMain.Instance.EditingAlarmParam.repeat_type &= ~(1 << m_iIndex);
 			}
+
 			return;
 		}
 

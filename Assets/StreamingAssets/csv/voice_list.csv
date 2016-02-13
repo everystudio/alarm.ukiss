@@ -1,0 +1,15 @@
+id,type,name,description,name_icon,name_voice,release_date
+1,1,-----,目覚ましアラーム アラーム音（無料）,kiss_all_01_icon,voice_001,2015-01-01 00:00:00
+2,1,-----,目覚ましアラーム U-KISS（無料）,kiss_all_02_icon,voice_002,2015-01-01 00:00:00
+3,2,Ver.スヒョン,目覚ましアラーム 恋人（BASIC）編,kiss_member01_01_icon,item.alarm.ukiss.voice001,2015-01-01 00:00:00
+4,2,Ver.キソプ,目覚ましアラーム 恋人（BASIC）編,kiss_member02_01_icon,item.alarm.ukiss.voice002,2015-01-01 00:00:00
+5,2,Ver.イライ,目覚ましアラーム 恋人（BASIC）編,kiss_member03_01_icon,item.alarm.ukiss.voice003,2015-01-01 00:00:00
+6,2,Ver.フン,目覚ましアラーム 恋人（BASIC）編,kiss_member04_01_icon,item.alarm.ukiss.voice004,2015-01-01 00:00:00
+7,2,Ver.ケビン,目覚ましアラーム 恋人（BASIC）編,kiss_member05_01_icon,item.alarm.ukiss.voice005,2015-01-01 00:00:00
+8,2,Ver.ジュン,目覚ましアラーム 恋人（BASIC）編,kiss_member06_01_icon,item.alarm.ukiss.voice006,2015-01-01 00:00:00
+9,2,Ver.スヒョン,目覚ましアラーム 恋人（スウィート）編,kiss_member01_01_icon,item.alarm.ukiss.voice007,2015-01-01 00:00:00
+10,2,Ver.キソプ,目覚ましアラーム 恋人（スウィート）編,kiss_member02_01_icon,item.alarm.ukiss.voice008,2015-01-01 00:00:00
+11,2,Ver.イライ,目覚ましアラーム 恋人（スウィート）編,kiss_member03_01_icon,item.alarm.ukiss.voice009,2015-01-01 00:00:00
+12,2,Ver.フン,目覚ましアラーム 恋人（スウィート）編,kiss_member04_01_icon,item.alarm.ukiss.voice010,2015-01-01 00:00:00
+13,2,Ver.ケビン,目覚ましアラーム 恋人（スウィート）編,kiss_member05_01_icon,item.alarm.ukiss.voice011,2015-01-01 00:00:00
+14,2,Ver.ジュン,目覚ましアラーム 恋人（スウィート）編,kiss_member06_01_icon,item.alarm.ukiss.voice012,2015-01-01 00:00:00

@@ -45,24 +45,25 @@ public class VoiceMain : PageBase {
 		//m_bmBannerList = new ButtonManager ();
 		//m_bmBannerShop = new ButtonManager ();
 		foreach (CsvVoiceData data in DataManagerAlarm.Instance.master_voice_list) {
-			if (data.type == 1) {
+			if (TimeManager.Instance.GetDiffNow (data.release_date).TotalSeconds < 0) {
+				if (data.type == 1) {
 
-				GameObject obj = PrefabManager.Instance.MakeObject ("prefab/BannerList", m_gridList.gameObject);
-				BannerList script = obj.GetComponent<BannerList> ();
-				m_bmBannerList.AddButtonBaseList (obj);
-				script.Initialize (data);
-				m_bmBannerListSelect.AddButtonBaseList (script.m_goSelect);
-				m_bannerList.Add (script);
+					GameObject obj = PrefabManager.Instance.MakeObject ("prefab/BannerList", m_gridList.gameObject);
+					BannerList script = obj.GetComponent<BannerList> ();
+					m_bmBannerList.AddButtonBaseList (obj);
+					script.Initialize (data);
+					m_bmBannerListSelect.AddButtonBaseList (script.m_goSelect);
+					m_bannerList.Add (script);
 
-			}
-			else if (data.type == 2) {
-				GameObject obj = PrefabManager.Instance.MakeObject ("prefab/BannerShop", m_gridStore.gameObject);
-				BannerShop script = obj.GetComponent<BannerShop> ();
-				m_bmBannerShop.AddButtonBaseList (obj);
-				script.Initialize (data);
-				m_bmBannerShopSelect.AddButtonBaseList (script.m_goSelect);
-				m_bannerShop.Add (script);
-			} else {
+				} else if (data.type == 2) {
+					GameObject obj = PrefabManager.Instance.MakeObject ("prefab/BannerShop", m_gridStore.gameObject);
+					BannerShop script = obj.GetComponent<BannerShop> ();
+					m_bmBannerShop.AddButtonBaseList (obj);
+					script.Initialize (data);
+					m_bmBannerShopSelect.AddButtonBaseList (script.m_goSelect);
+					m_bannerShop.Add (script);
+				} else {
+				}
 			}
 		}
 		m_bmBannerList.SetButtonbaseFromList ();
@@ -167,6 +168,8 @@ public class VoiceMain : PageBase {
 
 		switch (m_eStep) {
 		case STEP.IDLE:
+			if (bInit) {
+			}
 			break;
 		}
 

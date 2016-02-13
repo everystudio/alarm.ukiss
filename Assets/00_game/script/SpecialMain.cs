@@ -115,7 +115,6 @@ public class SpecialMain : PageBase {
 		switch (m_eStep) {
 		case STEP.NONE:
 			return;
-			break;
 
 		case STEP.LIMIT_CHECK:
 			if (EveryStudioLibrary.CommonNetwork.Instance.IsConnected (m_iNetworkSerial) == true) {

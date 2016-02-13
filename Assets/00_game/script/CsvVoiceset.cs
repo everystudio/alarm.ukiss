@@ -9,10 +9,9 @@ public class CsvVoicesetData : CsvDataParam
 	public string kakucho { get; private set; }
 }
 
-
 public class CsvVoiceset : CsvData<CsvVoicesetData> {
-	private static readonly string FilePath = "csv/voiceset_list";
-	public void Load() { LoadResources(FilePath); }
+	private static readonly string FilePath = "voiceset_list";
+	public void Load() { Load(FilePath); }
 }
 
 

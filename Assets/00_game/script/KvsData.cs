@@ -55,7 +55,7 @@ public class KvsData : CsvData<KVSParam>{
 		insert_data.key = _strKey;
 		insert_data.value = _strValue;
 		list.Add (insert_data);
-		return;
+		Debug.Log ("add");
 		return;
 	}
 	public void WriteString(string _strKey , string _strValue){
