@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 467b6d92b144fc54cb047a280c0bd60d
+timeCreated: 1455446453
+licenseType: Free
+AudioImporter:
+  serializedVersion: 6
+  defaultSettings:
+    loadType: 0
+    sampleRateSetting: 0
+    sampleRateOverride: 44100
+    compressionFormat: 1
+    quality: 1
+    conversionMode: 0
+  platformSettingOverrides: {}
+  forceToMono: 0
+  normalize: 1
+  preloadAudioData: 1
+  loadInBackground: 0
+  3D: 1
+  userData: 
+  assetBundleName: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice038_1.unity3d
+  assetBundleVariant: 

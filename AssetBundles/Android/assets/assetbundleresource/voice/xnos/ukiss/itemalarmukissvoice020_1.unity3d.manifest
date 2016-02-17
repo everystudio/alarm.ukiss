@@ -1,0 +1,16 @@
+ManifestFileVersion: 0
+CRC: 2952597993
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: a4802c25ce36a9fa7cf45fdba17510fe
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c516f2a3b2b6b67ef759f6410a790acd
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+Assets:
+- Assets/AssetBundleResource/voice/xnos/ukiss/itemalarmukissvoice020_1.mp3
+Dependencies: []

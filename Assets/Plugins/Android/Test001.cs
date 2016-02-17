@@ -5,7 +5,10 @@ using System.Collections.Generic;
 public class Test001 : MonoBehaviour
 {
 	#if UNITY_ANDROID
+
+	#if UNITY_ANDROID && !UNITY_EDITOR
 	static AndroidJavaObject m_plugin = null;
+	#endif
 	static AndroidJavaObject m_plugin2 = null;
 	static GameObject m_instance;
 

@@ -2,380 +2,506 @@ ManifestFileVersion: 0
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
-      Name: assets/assetbundleresource/sprite/everystudio/school/tsukinaga_himeka_01.unity3d
-      Dependencies: {}
-    Info_1:
-      Name: assets/assetbundleresource/sprite/everystudio/school/harusaki_yusa_01.unity3d
-      Dependencies: {}
-    Info_2:
-      Name: assets/assetbundleresource/sprite/everystudio/school/kureha_ruri_01.unity3d
-      Dependencies: {}
-    Info_3:
-      Name: assets/assetbundleresource/sprite/everystudio/school/takira_itsuki_01.unity3d
-      Dependencies: {}
-    Info_4:
-      Name: assets/assetbundleresource/sprite/everystudio/school/tsukinaga_himeka_face.unity3d
-      Dependencies: {}
-    Info_5:
-      Name: assets/assetbundleresource/sprite/everystudio/school/mashino_kayo_01.unity3d
-      Dependencies: {}
-    Info_6:
-      Name: assets/assetbundleresource/sprite/everystudio/school/koya_chihiro_01.unity3d
-      Dependencies: {}
-    Info_7:
-      Name: assets/assetbundleresource/sprite/everystudio/school/harusaki_yusa_face.unity3d
-      Dependencies: {}
-    Info_8:
-      Name: assets/assetbundleresource/sprite/everystudio/school/amachi_emi_face.unity3d
-      Dependencies: {}
-    Info_9:
-      Name: assets/assetbundleresource/sprite/everystudio/school/sakuragawa_meina_face.unity3d
-      Dependencies: {}
-    Info_10:
-      Name: assets/assetbundleresource/sprite/everystudio/school/hoshina_saki_01.unity3d
-      Dependencies: {}
-    Info_11:
-      Name: assets/assetbundleresource/sprite/everystudio/school/kanashiro_ririko_face.unity3d
-      Dependencies: {}
-    Info_12:
-      Name: assets/assetbundleresource/sprite/everystudio/school/hoshina_saki_face.unity3d
-      Dependencies: {}
-    Info_13:
-      Name: assets/assetbundleresource/sprite/everystudio/school/kureha_ruri_face.unity3d
-      Dependencies: {}
-    Info_14:
-      Name: assets/assetbundleresource/sprite/everystudio/school/yuuki_shima_01.unity3d
-      Dependencies: {}
-    Info_15:
-      Name: assets/assetbundleresource/sprite/everystudio/school/takira_itsuki_face.unity3d
-      Dependencies: {}
-    Info_16:
-      Name: assets/assetbundleresource/sprite/everystudio/school/kanashiro_ririko_01.unity3d
-      Dependencies: {}
-    Info_17:
-      Name: assets/assetbundleresource/sprite/everystudio/school/yuuki_shima_face.unity3d
-      Dependencies: {}
-    Info_18:
-      Name: assets/assetbundleresource/sprite/everystudio/school/amachi_emi_01.unity3d
-      Dependencies: {}
-    Info_19:
-      Name: assets/assetbundleresource/sprite/everystudio/school/koya_chihiro_face.unity3d
-      Dependencies: {}
-    Info_20:
-      Name: assets/assetbundleresource/sprite/everystudio/school/mashino_kayo_face.unity3d
-      Dependencies: {}
-    Info_21:
-      Name: assets/assetbundleresource/sprite/everystudio/school/sakuragawa_meina_01.unity3d
-      Dependencies: {}
-    Info_22:
-      Name: assets/assetbundleresource/voice/everystudio/school/se_start_00.unity3d
-      Dependencies: {}
-    Info_23:
-      Name: assets/assetbundleresource/voice/everystudio/school/se_goal_00.unity3d
-      Dependencies: {}
-    Info_24:
-      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_all_01_illust.unity3d
-      Dependencies: {}
-    Info_25:
-      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member01_01_icon.unity3d
-      Dependencies: {}
-    Info_26:
-      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member06_01_illust.unity3d
-      Dependencies: {}
-    Info_27:
-      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member05_01_illust.unity3d
-      Dependencies: {}
-    Info_28:
-      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member04_01_illust.unity3d
-      Dependencies: {}
-    Info_29:
-      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member05_01_icon.unity3d
-      Dependencies: {}
-    Info_30:
-      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member06_01_icon.unity3d
-      Dependencies: {}
-    Info_31:
-      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_all_02_icon.unity3d
-      Dependencies: {}
-    Info_32:
       Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member02_01_illust.unity3d
       Dependencies: {}
-    Info_33:
-      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member02_01_icon.unity3d
+    Info_1:
+      Name: assets/assetbundleresource/sprite/everystudio/school/takira_itsuki_01.unity3d
       Dependencies: {}
-    Info_34:
-      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member03_01_illust.unity3d
+    Info_2:
+      Name: assets/assetbundleresource/sprite/everystudio/school/koya_chihiro_01.unity3d
       Dependencies: {}
-    Info_35:
-      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_all_01_icon.unity3d
+    Info_3:
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member05_01_illust.unity3d
       Dependencies: {}
-    Info_36:
-      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member04_01_icon.unity3d
+    Info_4:
+      Name: assets/assetbundleresource/sprite/everystudio/school/harusaki_yusa_01.unity3d
       Dependencies: {}
-    Info_37:
+    Info_5:
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member06_01_illust.unity3d
+      Dependencies: {}
+    Info_6:
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member06_01_icon.unity3d
+      Dependencies: {}
+    Info_7:
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member04_01_illust.unity3d
+      Dependencies: {}
+    Info_8:
+      Name: assets/assetbundleresource/sprite/everystudio/school/yuuki_shima_face.unity3d
+      Dependencies: {}
+    Info_9:
+      Name: assets/assetbundleresource/sprite/everystudio/school/tsukinaga_himeka_01.unity3d
+      Dependencies: {}
+    Info_10:
+      Name: assets/assetbundleresource/sprite/everystudio/school/mashino_kayo_face.unity3d
+      Dependencies: {}
+    Info_11:
+      Name: assets/assetbundleresource/sprite/everystudio/school/hoshina_saki_01.unity3d
+      Dependencies: {}
+    Info_12:
+      Name: assets/assetbundleresource/sprite/everystudio/school/yuuki_shima_01.unity3d
+      Dependencies: {}
+    Info_13:
       Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member03_01_icon.unity3d
       Dependencies: {}
-    Info_38:
-      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member01_01_illust.unity3d
+    Info_14:
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member03_01_illust.unity3d
       Dependencies: {}
-    Info_39:
+    Info_15:
+      Name: assets/assetbundleresource/sprite/everystudio/school/kanashiro_ririko_01.unity3d
+      Dependencies: {}
+    Info_16:
+      Name: assets/assetbundleresource/sprite/everystudio/school/kureha_ruri_face.unity3d
+      Dependencies: {}
+    Info_17:
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_all_01_icon.unity3d
+      Dependencies: {}
+    Info_18:
+      Name: assets/assetbundleresource/sprite/everystudio/school/kanashiro_ririko_face.unity3d
+      Dependencies: {}
+    Info_19:
+      Name: assets/assetbundleresource/sprite/everystudio/school/kureha_ruri_01.unity3d
+      Dependencies: {}
+    Info_20:
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member02_01_icon.unity3d
+      Dependencies: {}
+    Info_21:
+      Name: assets/assetbundleresource/sprite/everystudio/school/takira_itsuki_face.unity3d
+      Dependencies: {}
+    Info_22:
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_all_01_illust.unity3d
+      Dependencies: {}
+    Info_23:
+      Name: assets/assetbundleresource/sprite/everystudio/school/koya_chihiro_face.unity3d
+      Dependencies: {}
+    Info_24:
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member05_01_icon.unity3d
+      Dependencies: {}
+    Info_25:
+      Name: assets/assetbundleresource/sprite/everystudio/school/harusaki_yusa_face.unity3d
+      Dependencies: {}
+    Info_26:
+      Name: assets/assetbundleresource/sprite/everystudio/school/hoshina_saki_face.unity3d
+      Dependencies: {}
+    Info_27:
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member01_01_icon.unity3d
+      Dependencies: {}
+    Info_28:
+      Name: assets/assetbundleresource/sprite/everystudio/school/tsukinaga_himeka_face.unity3d
+      Dependencies: {}
+    Info_29:
       Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_all_02_illust.unity3d
       Dependencies: {}
-    Info_40:
-      Name: assets/assetbundleresource/sound/bgm/demo_song.unity3d
+    Info_30:
+      Name: assets/assetbundleresource/sprite/everystudio/school/mashino_kayo_01.unity3d
       Dependencies: {}
-    Info_41:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/voice_001/voice_001_2.unity3d
+    Info_31:
+      Name: assets/assetbundleresource/sprite/everystudio/school/amachi_emi_face.unity3d
       Dependencies: {}
-    Info_42:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/voice_001/voice_001_1.unity3d
+    Info_32:
+      Name: assets/assetbundleresource/sprite/everystudio/school/sakuragawa_meina_01.unity3d
       Dependencies: {}
-    Info_43:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/voice_001/voice_001_3.unity3d
+    Info_33:
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member04_01_icon.unity3d
       Dependencies: {}
-    Info_44:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/voice_001/voice_001_4.unity3d
+    Info_34:
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_all_02_icon.unity3d
       Dependencies: {}
-    Info_45:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/voice_001/voice_001_6.unity3d
+    Info_35:
+      Name: assets/assetbundleresource/sprite/everystudio/school/sakuragawa_meina_face.unity3d
       Dependencies: {}
-    Info_46:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/voice_001/voice_001_5.unity3d
+    Info_36:
+      Name: assets/assetbundleresource/sprite/everystudio/school/amachi_emi_01.unity3d
       Dependencies: {}
-    Info_47:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/voice_002/voice_002_2.unity3d
+    Info_37:
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member01_01_illust.unity3d
       Dependencies: {}
-    Info_48:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/voice_002/voice_002_6.unity3d
-      Dependencies: {}
-    Info_49:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/voice_002/voice_002_1.unity3d
-      Dependencies: {}
-    Info_50:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/voice_002/voice_002_5.unity3d
-      Dependencies: {}
-    Info_51:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/voice_002/voice_002_3.unity3d
-      Dependencies: {}
-    Info_52:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/voice_002/voice_002_4.unity3d
-      Dependencies: {}
-    Info_53:
-      Name: assets/assetbundleresource/sound/bgm/freakyf.unity3d
-      Dependencies: {}
-    Info_54:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice001/itemalarmukissvoice001_1.unity3d
-      Dependencies: {}
-    Info_55:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice001/itemalarmukissvoice001_3.unity3d
-      Dependencies: {}
-    Info_56:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice001/itemalarmukissvoice001_6.unity3d
-      Dependencies: {}
-    Info_57:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice001/itemalarmukissvoice001_4.unity3d
-      Dependencies: {}
-    Info_58:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice001/itemalarmukissvoice001_2.unity3d
-      Dependencies: {}
-    Info_59:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice001/itemalarmukissvoice001_5.unity3d
-      Dependencies: {}
-    Info_60:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice002/itemalarmukissvoice002_4.unity3d
-      Dependencies: {}
-    Info_61:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice002/itemalarmukissvoice002_6.unity3d
-      Dependencies: {}
-    Info_62:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice002/itemalarmukissvoice002_2.unity3d
-      Dependencies: {}
-    Info_63:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice002/itemalarmukissvoice002_1.unity3d
-      Dependencies: {}
-    Info_64:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice002/itemalarmukissvoice002_5.unity3d
-      Dependencies: {}
-    Info_65:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice002/itemalarmukissvoice002_3.unity3d
-      Dependencies: {}
-    Info_66:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice003/itemalarmukissvoice003_2.unity3d
-      Dependencies: {}
-    Info_67:
+    Info_38:
       Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice003/itemalarmukissvoice003_4.unity3d
       Dependencies: {}
-    Info_68:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice003/itemalarmukissvoice003_5.unity3d
-      Dependencies: {}
-    Info_69:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice003/itemalarmukissvoice003_6.unity3d
-      Dependencies: {}
-    Info_70:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice003/itemalarmukissvoice003_1.unity3d
-      Dependencies: {}
-    Info_71:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice003/itemalarmukissvoice003_3.unity3d
-      Dependencies: {}
-    Info_72:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice004/itemalarmukissvoice004_1.unity3d
-      Dependencies: {}
-    Info_73:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice004/itemalarmukissvoice004_2.unity3d
-      Dependencies: {}
-    Info_74:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice004/itemalarmukissvoice004_4.unity3d
-      Dependencies: {}
-    Info_75:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice004/itemalarmukissvoice004_5.unity3d
-      Dependencies: {}
-    Info_76:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice004/itemalarmukissvoice004_6.unity3d
-      Dependencies: {}
-    Info_77:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice004/itemalarmukissvoice004_3.unity3d
-      Dependencies: {}
-    Info_78:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice005/itemalarmukissvoice005_4.unity3d
-      Dependencies: {}
-    Info_79:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice005/itemalarmukissvoice005_1.unity3d
-      Dependencies: {}
-    Info_80:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice005/itemalarmukissvoice005_6.unity3d
-      Dependencies: {}
-    Info_81:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice005/itemalarmukissvoice005_5.unity3d
-      Dependencies: {}
-    Info_82:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice005/itemalarmukissvoice005_3.unity3d
-      Dependencies: {}
-    Info_83:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice005/itemalarmukissvoice005_2.unity3d
-      Dependencies: {}
-    Info_84:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice006/itemalarmukissvoice006_3.unity3d
-      Dependencies: {}
-    Info_85:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice006/itemalarmukissvoice006_1.unity3d
-      Dependencies: {}
-    Info_86:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice006/itemalarmukissvoice006_6.unity3d
-      Dependencies: {}
-    Info_87:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice006/itemalarmukissvoice006_4.unity3d
-      Dependencies: {}
-    Info_88:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice006/itemalarmukissvoice006_5.unity3d
-      Dependencies: {}
-    Info_89:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice006/itemalarmukissvoice006_2.unity3d
-      Dependencies: {}
-    Info_90:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice007/itemalarmukissvoice007_6.unity3d
-      Dependencies: {}
-    Info_91:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice007/itemalarmukissvoice007_3.unity3d
-      Dependencies: {}
-    Info_92:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice007/itemalarmukissvoice007_5.unity3d
-      Dependencies: {}
-    Info_93:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice007/itemalarmukissvoice007_4.unity3d
-      Dependencies: {}
-    Info_94:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice007/itemalarmukissvoice007_2.unity3d
-      Dependencies: {}
-    Info_95:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice007/itemalarmukissvoice007_1.unity3d
-      Dependencies: {}
-    Info_96:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice008/itemalarmukissvoice008_1.unity3d
-      Dependencies: {}
-    Info_97:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice008/itemalarmukissvoice008_5.unity3d
-      Dependencies: {}
-    Info_98:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice008/itemalarmukissvoice008_3.unity3d
-      Dependencies: {}
-    Info_99:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice008/itemalarmukissvoice008_6.unity3d
-      Dependencies: {}
-    Info_100:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice008/itemalarmukissvoice008_2.unity3d
-      Dependencies: {}
-    Info_101:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice008/itemalarmukissvoice008_4.unity3d
-      Dependencies: {}
-    Info_102:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice009/itemalarmukissvoice009_2.unity3d
-      Dependencies: {}
-    Info_103:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice009/itemalarmukissvoice009_5.unity3d
-      Dependencies: {}
-    Info_104:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice009/itemalarmukissvoice009_4.unity3d
-      Dependencies: {}
-    Info_105:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice009/itemalarmukissvoice009_3.unity3d
-      Dependencies: {}
-    Info_106:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice009/itemalarmukissvoice009_6.unity3d
-      Dependencies: {}
-    Info_107:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice009/itemalarmukissvoice009_1.unity3d
-      Dependencies: {}
-    Info_108:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice010/itemalarmukissvoice010_3.unity3d
-      Dependencies: {}
-    Info_109:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice010/itemalarmukissvoice010_1.unity3d
-      Dependencies: {}
-    Info_110:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice010/itemalarmukissvoice010_2.unity3d
-      Dependencies: {}
-    Info_111:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice010/itemalarmukissvoice010_6.unity3d
-      Dependencies: {}
-    Info_112:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice010/itemalarmukissvoice010_5.unity3d
-      Dependencies: {}
-    Info_113:
+    Info_39:
       Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice010/itemalarmukissvoice010_4.unity3d
       Dependencies: {}
-    Info_114:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice011/itemalarmukissvoice011_3.unity3d
+    Info_40:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice004/itemalarmukissvoice004_5.unity3d
       Dependencies: {}
-    Info_115:
+    Info_41:
       Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice011/itemalarmukissvoice011_2.unity3d
       Dependencies: {}
-    Info_116:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice011/itemalarmukissvoice011_5.unity3d
+    Info_42:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/voice_001/voice_001_6.unity3d
       Dependencies: {}
-    Info_117:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice011/itemalarmukissvoice011_4.unity3d
+    Info_43:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice010/itemalarmukissvoice010_5.unity3d
       Dependencies: {}
-    Info_118:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice011/itemalarmukissvoice011_6.unity3d
-      Dependencies: {}
-    Info_119:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice011/itemalarmukissvoice011_1.unity3d
-      Dependencies: {}
-    Info_120:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice012/itemalarmukissvoice012_4.unity3d
-      Dependencies: {}
-    Info_121:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice012/itemalarmukissvoice012_1.unity3d
-      Dependencies: {}
-    Info_122:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice012/itemalarmukissvoice012_3.unity3d
-      Dependencies: {}
-    Info_123:
-      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice012/itemalarmukissvoice012_5.unity3d
-      Dependencies: {}
-    Info_124:
+    Info_44:
       Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice012/itemalarmukissvoice012_2.unity3d
       Dependencies: {}
-    Info_125:
+    Info_45:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice011/itemalarmukissvoice011_1.unity3d
+      Dependencies: {}
+    Info_46:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice002/itemalarmukissvoice002_6.unity3d
+      Dependencies: {}
+    Info_47:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice011/itemalarmukissvoice011_5.unity3d
+      Dependencies: {}
+    Info_48:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice007/itemalarmukissvoice007_6.unity3d
+      Dependencies: {}
+    Info_49:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice005/itemalarmukissvoice005_6.unity3d
+      Dependencies: {}
+    Info_50:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice012/itemalarmukissvoice012_3.unity3d
+      Dependencies: {}
+    Info_51:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice003/itemalarmukissvoice003_2.unity3d
+      Dependencies: {}
+    Info_52:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice008/itemalarmukissvoice008_4.unity3d
+      Dependencies: {}
+    Info_53:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice004/itemalarmukissvoice004_3.unity3d
+      Dependencies: {}
+    Info_54:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/voice_002/voice_002_1.unity3d
+      Dependencies: {}
+    Info_55:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice005/itemalarmukissvoice005_4.unity3d
+      Dependencies: {}
+    Info_56:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice005/itemalarmukissvoice005_5.unity3d
+      Dependencies: {}
+    Info_57:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice005/itemalarmukissvoice005_3.unity3d
+      Dependencies: {}
+    Info_58:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice008/itemalarmukissvoice008_3.unity3d
+      Dependencies: {}
+    Info_59:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice006/itemalarmukissvoice006_4.unity3d
+      Dependencies: {}
+    Info_60:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice009/itemalarmukissvoice009_6.unity3d
+      Dependencies: {}
+    Info_61:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice012/itemalarmukissvoice012_1.unity3d
+      Dependencies: {}
+    Info_62:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice006/itemalarmukissvoice006_3.unity3d
+      Dependencies: {}
+    Info_63:
+      Name: assets/assetbundleresource/sound/bgm/demo_song.unity3d
+      Dependencies: {}
+    Info_64:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice004/itemalarmukissvoice004_2.unity3d
+      Dependencies: {}
+    Info_65:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice012/itemalarmukissvoice012_4.unity3d
+      Dependencies: {}
+    Info_66:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice009/itemalarmukissvoice009_3.unity3d
+      Dependencies: {}
+    Info_67:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice009/itemalarmukissvoice009_1.unity3d
+      Dependencies: {}
+    Info_68:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice001/itemalarmukissvoice001_6.unity3d
+      Dependencies: {}
+    Info_69:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice008/itemalarmukissvoice008_6.unity3d
+      Dependencies: {}
+    Info_70:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice002/itemalarmukissvoice002_3.unity3d
+      Dependencies: {}
+    Info_71:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice007/itemalarmukissvoice007_4.unity3d
+      Dependencies: {}
+    Info_72:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice008/itemalarmukissvoice008_2.unity3d
+      Dependencies: {}
+    Info_73:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice003/itemalarmukissvoice003_6.unity3d
+      Dependencies: {}
+    Info_74:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice001/itemalarmukissvoice001_5.unity3d
+      Dependencies: {}
+    Info_75:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice002/itemalarmukissvoice002_2.unity3d
+      Dependencies: {}
+    Info_76:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice007/itemalarmukissvoice007_5.unity3d
+      Dependencies: {}
+    Info_77:
+      Name: assets/assetbundleresource/voice/everystudio/school/se_start_00.unity3d
+      Dependencies: {}
+    Info_78:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/voice_001/voice_001_1.unity3d
+      Dependencies: {}
+    Info_79:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice006/itemalarmukissvoice006_5.unity3d
+      Dependencies: {}
+    Info_80:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice010/itemalarmukissvoice010_3.unity3d
+      Dependencies: {}
+    Info_81:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/voice_001/voice_001_4.unity3d
+      Dependencies: {}
+    Info_82:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice010/itemalarmukissvoice010_1.unity3d
+      Dependencies: {}
+    Info_83:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice012/itemalarmukissvoice012_5.unity3d
+      Dependencies: {}
+    Info_84:
       Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice012/itemalarmukissvoice012_6.unity3d
+      Dependencies: {}
+    Info_85:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice003/itemalarmukissvoice003_5.unity3d
+      Dependencies: {}
+    Info_86:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/voice_002/voice_002_5.unity3d
+      Dependencies: {}
+    Info_87:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice007/itemalarmukissvoice007_3.unity3d
+      Dependencies: {}
+    Info_88:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice009/itemalarmukissvoice009_4.unity3d
+      Dependencies: {}
+    Info_89:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice003/itemalarmukissvoice003_3.unity3d
+      Dependencies: {}
+    Info_90:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice002/itemalarmukissvoice002_5.unity3d
+      Dependencies: {}
+    Info_91:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice001/itemalarmukissvoice001_1.unity3d
+      Dependencies: {}
+    Info_92:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice007/itemalarmukissvoice007_2.unity3d
+      Dependencies: {}
+    Info_93:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice010/itemalarmukissvoice010_6.unity3d
+      Dependencies: {}
+    Info_94:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice007/itemalarmukissvoice007_1.unity3d
+      Dependencies: {}
+    Info_95:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice006/itemalarmukissvoice006_1.unity3d
+      Dependencies: {}
+    Info_96:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice009/itemalarmukissvoice009_2.unity3d
+      Dependencies: {}
+    Info_97:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice008/itemalarmukissvoice008_1.unity3d
+      Dependencies: {}
+    Info_98:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/voice_001/voice_001_3.unity3d
+      Dependencies: {}
+    Info_99:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/voice_002/voice_002_3.unity3d
+      Dependencies: {}
+    Info_100:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice005/itemalarmukissvoice005_1.unity3d
+      Dependencies: {}
+    Info_101:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/voice_002/voice_002_6.unity3d
+      Dependencies: {}
+    Info_102:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice011/itemalarmukissvoice011_4.unity3d
+      Dependencies: {}
+    Info_103:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/voice_001/voice_001_2.unity3d
+      Dependencies: {}
+    Info_104:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice011/itemalarmukissvoice011_6.unity3d
+      Dependencies: {}
+    Info_105:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice005/itemalarmukissvoice005_2.unity3d
+      Dependencies: {}
+    Info_106:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice001/itemalarmukissvoice001_3.unity3d
+      Dependencies: {}
+    Info_107:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/voice_002/voice_002_4.unity3d
+      Dependencies: {}
+    Info_108:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/voice_002/voice_002_2.unity3d
+      Dependencies: {}
+    Info_109:
+      Name: assets/assetbundleresource/sound/bgm/freakyf.unity3d
+      Dependencies: {}
+    Info_110:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice003/itemalarmukissvoice003_1.unity3d
+      Dependencies: {}
+    Info_111:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice009/itemalarmukissvoice009_5.unity3d
+      Dependencies: {}
+    Info_112:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/voice_001/voice_001_5.unity3d
+      Dependencies: {}
+    Info_113:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice006/itemalarmukissvoice006_6.unity3d
+      Dependencies: {}
+    Info_114:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice006/itemalarmukissvoice006_2.unity3d
+      Dependencies: {}
+    Info_115:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice002/itemalarmukissvoice002_4.unity3d
+      Dependencies: {}
+    Info_116:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice001/itemalarmukissvoice001_4.unity3d
+      Dependencies: {}
+    Info_117:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice011/itemalarmukissvoice011_3.unity3d
+      Dependencies: {}
+    Info_118:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice004/itemalarmukissvoice004_6.unity3d
+      Dependencies: {}
+    Info_119:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice010/itemalarmukissvoice010_2.unity3d
+      Dependencies: {}
+    Info_120:
+      Name: assets/assetbundleresource/voice/everystudio/school/se_goal_00.unity3d
+      Dependencies: {}
+    Info_121:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice004/itemalarmukissvoice004_1.unity3d
+      Dependencies: {}
+    Info_122:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice004/itemalarmukissvoice004_4.unity3d
+      Dependencies: {}
+    Info_123:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice002/itemalarmukissvoice002_1.unity3d
+      Dependencies: {}
+    Info_124:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice008/itemalarmukissvoice008_5.unity3d
+      Dependencies: {}
+    Info_125:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice001/itemalarmukissvoice001_2.unity3d
+      Dependencies: {}
+    Info_126:
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member03_02_icon.unity3d
+      Dependencies: {}
+    Info_127:
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member05_02_icon.unity3d
+      Dependencies: {}
+    Info_128:
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member01_02_icon.unity3d
+      Dependencies: {}
+    Info_129:
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member04_02_icon.unity3d
+      Dependencies: {}
+    Info_130:
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member02_02_icon.unity3d
+      Dependencies: {}
+    Info_131:
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member06_02_icon.unity3d
+      Dependencies: {}
+    Info_132:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice033_1.unity3d
+      Dependencies: {}
+    Info_133:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice037_1.unity3d
+      Dependencies: {}
+    Info_134:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice035_1.unity3d
+      Dependencies: {}
+    Info_135:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice018_1.unity3d
+      Dependencies: {}
+    Info_136:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice013_1.unity3d
+      Dependencies: {}
+    Info_137:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice024_1.unity3d
+      Dependencies: {}
+    Info_138:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice043_1.unity3d
+      Dependencies: {}
+    Info_139:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice021_1.unity3d
+      Dependencies: {}
+    Info_140:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice022_1.unity3d
+      Dependencies: {}
+    Info_141:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice041_1.unity3d
+      Dependencies: {}
+    Info_142:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice044_1.unity3d
+      Dependencies: {}
+    Info_143:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice016_1.unity3d
+      Dependencies: {}
+    Info_144:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice027_1.unity3d
+      Dependencies: {}
+    Info_145:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice017_1.unity3d
+      Dependencies: {}
+    Info_146:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice045_1.unity3d
+      Dependencies: {}
+    Info_147:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice047_1.unity3d
+      Dependencies: {}
+    Info_148:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice028_1.unity3d
+      Dependencies: {}
+    Info_149:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice023_1.unity3d
+      Dependencies: {}
+    Info_150:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice040_1.unity3d
+      Dependencies: {}
+    Info_151:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice039_1.unity3d
+      Dependencies: {}
+    Info_152:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice031_1.unity3d
+      Dependencies: {}
+    Info_153:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice042_1.unity3d
+      Dependencies: {}
+    Info_154:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice025_1.unity3d
+      Dependencies: {}
+    Info_155:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice019_1.unity3d
+      Dependencies: {}
+    Info_156:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice036_1.unity3d
+      Dependencies: {}
+    Info_157:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice020_1.unity3d
+      Dependencies: {}
+    Info_158:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice030_1.unity3d
+      Dependencies: {}
+    Info_159:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice026_1.unity3d
+      Dependencies: {}
+    Info_160:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice029_1.unity3d
+      Dependencies: {}
+    Info_161:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice038_1.unity3d
+      Dependencies: {}
+    Info_162:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice034_1.unity3d
+      Dependencies: {}
+    Info_163:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice014_1.unity3d
+      Dependencies: {}
+    Info_164:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice032_1.unity3d
+      Dependencies: {}
+    Info_165:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice046_1.unity3d
+      Dependencies: {}
+    Info_166:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice048_1.unity3d
+      Dependencies: {}
+    Info_167:
+      Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice015_1.unity3d
       Dependencies: {}
