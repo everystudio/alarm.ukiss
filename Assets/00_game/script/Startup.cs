@@ -113,6 +113,11 @@ public class Startup : MonoBehaviour {
 			}
 			if ( m_iDownloadCount == load_check.Count) {
 				m_eStep = STEP.START_MAIN;
+
+				// データを更新した場合はアセットバンドルの更新があるかも知れないので
+				// キャッシュクリアをする
+				Caching.CleanCache();
+
 				m_kvs.Write ("csv_data_version", m_strCsvDataVersion);
 				m_kvs.Save ();
 			}

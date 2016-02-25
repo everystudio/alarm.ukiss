@@ -505,3 +505,21 @@ AssetBundleManifest:
     Info_167:
       Name: assets/assetbundleresource/voice/xnos/ukiss/itemalarmukissvoice015_1.unity3d
       Dependencies: {}
+    Info_168:
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member03_02_illust.unity3d
+      Dependencies: {}
+    Info_169:
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member02_02_illust.unity3d
+      Dependencies: {}
+    Info_170:
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member06_02_illust.unity3d
+      Dependencies: {}
+    Info_171:
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member05_02_illust.unity3d
+      Dependencies: {}
+    Info_172:
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member04_02_illust.unity3d
+      Dependencies: {}
+    Info_173:
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member01_02_illust.unity3d
+      Dependencies: {}

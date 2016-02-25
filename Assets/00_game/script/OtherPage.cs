@@ -4,7 +4,7 @@ using System.Collections;
 public class OtherPage : ButtonManager {
 
 	private const float MOVE_TIME = 0.1f;
-	private Vector3 POS_OUT = new Vector3 (0.0f, -1136.0f, 0.0f);
+	private Vector3 POS_OUT = new Vector3 (0.0f, -1136.0f - 100.0f, 0.0f);
 
 	public bool m_bInitialized;
 
