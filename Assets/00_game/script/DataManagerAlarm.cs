@@ -5,6 +5,8 @@ using Prime31;
 
 public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 
+	public int APP_VERSION = 11;
+
 	public CsvImage m_csvImage = new CsvImage();
 	public List<CsvImageData> master_image_list {
 		get{ 

@@ -66,7 +66,7 @@ public class Startup : MonoBehaviour {
 
 		case STEP.CHECK_NEW_DATA:
 			if (bInit) {
-				m_iNetworkSerial = EveryStudioLibrary.CommonNetwork.Instance.Recieve ("http://ad.xnosserver.com/apps/myzoo_data/ukiss/datacheck.txt");
+				m_iNetworkSerial = EveryStudioLibrary.CommonNetwork.Instance.Recieve (string.Format("http://ad.xnosserver.com/apps/myzoo_data/ukiss/{0}/datacheck.txt",DataManagerAlarm.Instance.APP_VERSION));
 			}
 			if (EveryStudioLibrary.CommonNetwork.Instance.IsConnected (m_iNetworkSerial) == true) {
 
@@ -108,7 +108,7 @@ public class Startup : MonoBehaviour {
 			if (bInit) {
 				m_iDownloadCount = 0;
 				foreach (string filename in load_check) {
-					StartCoroutine (LoadData (filename, "http://ad.xnosserver.com/apps/myzoo_data/ukiss"));
+					StartCoroutine (LoadData (filename, string.Format("http://ad.xnosserver.com/apps/myzoo_data/ukiss/{0}" , DataManagerAlarm.Instance.APP_VERSION)));
 				}
 			}
 			if ( m_iDownloadCount == load_check.Count) {

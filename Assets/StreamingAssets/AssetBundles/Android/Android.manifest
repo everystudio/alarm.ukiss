@@ -523,3 +523,39 @@ AssetBundleManifest:
     Info_173:
       Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member01_02_illust.unity3d
       Dependencies: {}
+    Info_174:
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member04_03_icon.unity3d
+      Dependencies: {}
+    Info_175:
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member02_03_icon.unity3d
+      Dependencies: {}
+    Info_176:
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member05_03_icon.unity3d
+      Dependencies: {}
+    Info_177:
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member02_03_illust.unity3d
+      Dependencies: {}
+    Info_178:
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member01_03_illust.unity3d
+      Dependencies: {}
+    Info_179:
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member03_03_icon.unity3d
+      Dependencies: {}
+    Info_180:
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member06_03_illust.unity3d
+      Dependencies: {}
+    Info_181:
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member05_03_illust.unity3d
+      Dependencies: {}
+    Info_182:
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member01_03_icon.unity3d
+      Dependencies: {}
+    Info_183:
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member06_03_icon.unity3d
+      Dependencies: {}
+    Info_184:
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member04_03_illust.unity3d
+      Dependencies: {}
+    Info_185:
+      Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member03_03_illust.unity3d
+      Dependencies: {}
