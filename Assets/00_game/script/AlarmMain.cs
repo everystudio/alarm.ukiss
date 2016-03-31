@@ -18,7 +18,7 @@ public class AlarmMain : PageBase {
 
 	public void refreshTime (){
 		DateTime now = TimeManager.GetNow ();
-		m_lbNowDate.text = string.Format( "{0} {1:D2} {2}" , DataManagerAlarm.Instance.STR_MONTH_SHORT_ARR[now.Month] , now.Day , DataManagerAlarm.Instance.STR_WEEK_SHORT_ARR[TimeManager.Instance.GetWeekIndex(TimeManager.StrGetTime())]);
+		m_lbNowDate.text = string.Format( "{0}/{1:D2} {2}" , DataManagerAlarm.Instance.STR_MONTH_SHORT_ARR[now.Month] , now.Day , DataManagerAlarm.Instance.STR_WEEK_SHORT_ARR[TimeManager.Instance.GetWeekIndex(TimeManager.StrGetTime())]);
 
 		m_lbNowTime.text = string.Format ("{0:D2}:{1:D2}:{2:D2}", now.Hour, now.Minute, now.Second);
 	}
