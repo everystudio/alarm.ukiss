@@ -1,0 +1,16 @@
+ManifestFileVersion: 0
+CRC: 3473635215
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 36c20a7372cb09a6b36b124cb987600e
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c516f2a3b2b6b67ef759f6410a790acd
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+Assets:
+- Assets/AssetBundleResource/voice/xnos/overload/ovl_voice6.mp3
+Dependencies: []

@@ -1,9 +1,5 @@
 id,type,name,description,name_image,name_icon
-1,1,全体１,全体１,kiss_all_01_illust,kiss_all_01_icon
-2,1,全体２,全体２,kiss_all_02_illust,kiss_all_02_icon
-3,1,男性１,男性１,kiss_member01_01_illust,kiss_member01_01_icon
-4,1,男性２,男性２,kiss_member02_01_illust,kiss_member02_01_icon
-5,1,男性３,男性３,kiss_member03_01_illust,kiss_member03_01_icon
-6,1,男性４,男性４,kiss_member04_01_illust,kiss_member04_01_icon
-7,1,男性５,男性５,kiss_member05_01_illust,kiss_member05_01_icon
-8,1,男性６,男性６,kiss_member06_01_illust,kiss_member06_01_icon
+1,1,壁紙1,壁紙1,ovl_home1,ovl_thumnail1
+2,1,壁紙2,壁紙2,ovl_home2,ovl_thumnail2
+3,1,壁紙3,壁紙3,ovl_home3,ovl_thumnail3
+4,1,壁紙4,壁紙4,ovl_home4,ovl_thumnail4

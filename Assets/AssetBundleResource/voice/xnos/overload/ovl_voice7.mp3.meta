@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: cfc6f05eb57ca6143ac7b30d4c32fe61
+timeCreated: 1459158230
+licenseType: Free
+AudioImporter:
+  serializedVersion: 6
+  defaultSettings:
+    loadType: 0
+    sampleRateSetting: 0
+    sampleRateOverride: 44100
+    compressionFormat: 1
+    quality: 1
+    conversionMode: 0
+  platformSettingOverrides: {}
+  forceToMono: 0
+  normalize: 1
+  preloadAudioData: 1
+  loadInBackground: 0
+  3D: 1
+  userData: 
+  assetBundleName: assets/assetbundleresource/voice/xnos/overload/ovl_voice7.unity3d
+  assetBundleVariant: 

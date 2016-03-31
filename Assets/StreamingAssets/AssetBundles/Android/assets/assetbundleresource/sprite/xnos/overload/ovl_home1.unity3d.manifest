@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 1024617640
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 627b016f9125ce55493800f055c9e198
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9dea23ffc7e96552740e12d1ee5309d8
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/AssetBundleResource/sprite/xnos/overload/ovl_home1.png
+Dependencies: []

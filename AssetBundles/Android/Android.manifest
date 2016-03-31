@@ -559,3 +559,75 @@ AssetBundleManifest:
     Info_185:
       Name: assets/assetbundleresource/sprite/xnos/kiss/kiss_member03_03_illust.unity3d
       Dependencies: {}
+    Info_186:
+      Name: assets/assetbundleresource/sprite/xnos/overload/ovl_home1.unity3d
+      Dependencies: {}
+    Info_187:
+      Name: assets/assetbundleresource/sprite/xnos/overload/ovl_home3.unity3d
+      Dependencies: {}
+    Info_188:
+      Name: assets/assetbundleresource/sprite/xnos/overload/ovl_thumnail2.unity3d
+      Dependencies: {}
+    Info_189:
+      Name: assets/assetbundleresource/sprite/xnos/overload/ovl_thumnail3.unity3d
+      Dependencies: {}
+    Info_190:
+      Name: assets/assetbundleresource/sprite/xnos/overload/ovl_thumnail1.unity3d
+      Dependencies: {}
+    Info_191:
+      Name: assets/assetbundleresource/sprite/xnos/overload/ovl_home4.unity3d
+      Dependencies: {}
+    Info_192:
+      Name: assets/assetbundleresource/sprite/xnos/overload/ovl_thumnail4.unity3d
+      Dependencies: {}
+    Info_193:
+      Name: assets/assetbundleresource/sprite/xnos/overload/ovl_home2.unity3d
+      Dependencies: {}
+    Info_194:
+      Name: assets/assetbundleresource/voice/xnos/overload/ovl_voice8.unity3d
+      Dependencies: {}
+    Info_195:
+      Name: assets/assetbundleresource/voice/xnos/overload/ovl_voice1.unity3d
+      Dependencies: {}
+    Info_196:
+      Name: assets/assetbundleresource/voice/xnos/overload/ovl_voice14.unity3d
+      Dependencies: {}
+    Info_197:
+      Name: assets/assetbundleresource/voice/xnos/overload/ovl_voice13.unity3d
+      Dependencies: {}
+    Info_198:
+      Name: assets/assetbundleresource/voice/xnos/overload/ovl_voice7.unity3d
+      Dependencies: {}
+    Info_199:
+      Name: assets/assetbundleresource/voice/xnos/overload/ovl_voice2.unity3d
+      Dependencies: {}
+    Info_200:
+      Name: assets/assetbundleresource/voice/xnos/overload/ovl_voice3.unity3d
+      Dependencies: {}
+    Info_201:
+      Name: assets/assetbundleresource/voice/xnos/overload/ovl_voice11.unity3d
+      Dependencies: {}
+    Info_202:
+      Name: assets/assetbundleresource/voice/xnos/overload/ovl_voice16.unity3d
+      Dependencies: {}
+    Info_203:
+      Name: assets/assetbundleresource/voice/xnos/overload/ovl_voice5.unity3d
+      Dependencies: {}
+    Info_204:
+      Name: assets/assetbundleresource/voice/xnos/overload/ovl_voice12.unity3d
+      Dependencies: {}
+    Info_205:
+      Name: assets/assetbundleresource/voice/xnos/overload/ovl_voice10.unity3d
+      Dependencies: {}
+    Info_206:
+      Name: assets/assetbundleresource/voice/xnos/overload/ovl_voice9.unity3d
+      Dependencies: {}
+    Info_207:
+      Name: assets/assetbundleresource/voice/xnos/overload/ovl_voice4.unity3d
+      Dependencies: {}
+    Info_208:
+      Name: assets/assetbundleresource/voice/xnos/overload/ovl_voice15.unity3d
+      Dependencies: {}
+    Info_209:
+      Name: assets/assetbundleresource/voice/xnos/overload/ovl_voice6.unity3d
+      Dependencies: {}
