@@ -8449,7 +8449,7 @@ MonoBehaviour:
     relative: 1
     absolute: 0
   updateAnchors: 1
-  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mColor: {r: 0.9843137, g: 0.972549, b: 0.8352941, a: 1}
   mPivot: 4
   mWidth: 561
   mHeight: 166
@@ -8461,16 +8461,16 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 898282f85c3564779bfbd07b7579218a, type: 3}
   mFont: {fileID: 0}
-  mText: "\u6642\u523B\u306B\u306A\u308A\u307E\u3057\u305F"
+  mText: "\u6642\u9593\u3060\uFF01"
   mFontSize: 65
   mFontStyle: 0
   mAlignment: 0
   mEncoding: 1
   mMaxLineCount: 0
-  mEffectStyle: 0
-  mEffectColor: {r: 0, g: 0, b: 0, a: 1}
+  mEffectStyle: 3
+  mEffectColor: {r: 0.37586206, g: 0.37586206, b: 0.37586206, a: 1}
   mSymbols: 1
-  mEffectDistance: {x: 1, y: 1}
+  mEffectDistance: {x: 3, y: 3}
   mOverflow: 0
   mMaterial: {fileID: 0}
   mApplyGradient: 0
