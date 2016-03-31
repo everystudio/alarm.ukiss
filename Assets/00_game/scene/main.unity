@@ -2439,7 +2439,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 388263675}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 67, y: 0, z: 0}
+  m_LocalPosition: {x: 72.9, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 772239277}
@@ -3450,7 +3450,7 @@ MonoBehaviour:
   startingRenderQueue: 3030
   mClipTexture: {fileID: 0}
   mAlpha: 1
-  mClipping: 3
+  mClipping: 0
   mClipRange: {x: 0, y: 0, z: 640, w: 1136}
   mClipSoftness: {x: 0, y: 0}
   mDepth: 1
@@ -7313,7 +7313,7 @@ MonoBehaviour:
   startingRenderQueue: 3058
   mClipTexture: {fileID: 0}
   mAlpha: 1
-  mClipping: 3
+  mClipping: 0
   mClipRange: {x: 0, y: 0, z: 640, w: 1136}
   mClipSoftness: {x: 0, y: 0}
   mDepth: 112
@@ -7695,7 +7695,7 @@ MonoBehaviour:
   startingRenderQueue: 3045
   mClipTexture: {fileID: 0}
   mAlpha: 1
-  mClipping: 3
+  mClipping: 0
   mClipRange: {x: 0, y: 0, z: 640, w: 1136}
   mClipSoftness: {x: 0, y: 0}
   mDepth: 110
@@ -9615,7 +9615,7 @@ MonoBehaviour:
   startingRenderQueue: 3061
   mClipTexture: {fileID: 0}
   mAlpha: 1
-  mClipping: 3
+  mClipping: 0
   mClipRange: {x: 0, y: 0, z: 640, w: 1136}
   mClipSoftness: {x: 0, y: 0}
   mDepth: 112
@@ -10140,7 +10140,7 @@ MonoBehaviour:
   startingRenderQueue: 3064
   mClipTexture: {fileID: 0}
   mAlpha: 1
-  mClipping: 3
+  mClipping: 0
   mClipRange: {x: 0, y: 0, z: 640, w: 1136}
   mClipSoftness: {x: 0, y: 0}
   mDepth: 130
@@ -11410,7 +11410,7 @@ MonoBehaviour:
   startingRenderQueue: 3030
   mClipTexture: {fileID: 0}
   mAlpha: 1
-  mClipping: 3
+  mClipping: 0
   mClipRange: {x: 0, y: 0, z: 640, w: 1136}
   mClipSoftness: {x: 0, y: 0}
   mDepth: 0
@@ -11856,7 +11856,7 @@ MonoBehaviour:
   startingRenderQueue: 3040
   mClipTexture: {fileID: 0}
   mAlpha: 1
-  mClipping: 3
+  mClipping: 0
   mClipRange: {x: 0, y: 0, z: 640, w: 1136}
   mClipSoftness: {x: 0, y: 0}
   mDepth: 106

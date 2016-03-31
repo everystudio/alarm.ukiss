@@ -28,7 +28,7 @@ public class AlarmMain : PageBase {
 			string strTime = _list [0].m_strTime;
 			Debug.Log (strTime);
 			DateTime dateTime = TimeManager.Instance.MakeDateTime (strTime);
-			m_lbNextTime.text = string.Format ("{0:D2};{1:D2}", dateTime.Hour, dateTime.Minute);
+			m_lbNextTime.text = string.Format ("{0:D2}:{1:D2}", dateTime.Hour, dateTime.Minute);
 			m_lbNextWeek.text = DataManagerAlarm.Instance.STR_WEEK_SHORT_ARR[TimeManager.Instance.GetWeekIndex(strTime)];
 		} else {
 			m_lbNextTime.text = "--:--";

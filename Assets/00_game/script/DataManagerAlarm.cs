@@ -38,6 +38,19 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 	}
 	public string [] STR_MONTH_SHORT_ARR = new string[13]{
 		"NONE",
+		"1",
+		"2",
+		"3",
+		"4",
+		"5",
+		"6",
+		"7",
+		"8",
+		"9",
+		"10",
+		"11",
+		"12"
+		/*
 		"JAN",
 		"FEB",
 		"MAR",
@@ -50,8 +63,8 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 		"OCT",
 		"NOV",
 		"DEC"
+		*/
 	};
-
 	public string [] STR_WEEK_ARR = new string[7]{
 		"Monday",
 		"Tuesday",
@@ -62,13 +75,13 @@ public class DataManagerAlarm : DataManagerBase<DataManagerAlarm> {
 		"Sunday"
 	};
 	public string [] STR_WEEK_SHORT_ARR = new string[7]{
-		"Mon",
-		"Tue",
-		"Wed",
-		"Thu",
-		"Fri",
-		"Sat",
-		"Sun"
+		"mon",
+		"tue",
+		"wed",
+		"thu",
+		"fri",
+		"sat",
+		"sun"
 	};
 	public string [] STR_SNOOZE_ARR = new string[3]{
 		"5 min",
