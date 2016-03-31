@@ -4837,7 +4837,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 725639182}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 518, z: 0}
+  m_LocalPosition: {x: 0, y: 519, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 440864364}
@@ -5648,7 +5648,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 838749893}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 507, z: 0}
+  m_LocalPosition: {x: -199, y: -411, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1003416866}
@@ -5691,7 +5691,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 640, y: 120, z: 1}
+  m_Size: {x: 233.1, y: 75.6, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &870316452
 GameObject:
@@ -6796,7 +6796,7 @@ MonoBehaviour:
   startingRenderQueue: 3009
   mClipTexture: {fileID: 0}
   mAlpha: 1
-  mClipping: 3
+  mClipping: 0
   mClipRange: {x: 0, y: 0, z: 640, w: 1136}
   mClipSoftness: {x: 0, y: 0}
   mDepth: 0
