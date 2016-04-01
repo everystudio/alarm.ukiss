@@ -205,7 +205,7 @@ public class GameMain : PageBase {
 					LocalNotificationManager.Instance.AddLocalNotification (
 						reserve.m_lTime + i * lOffset,
 						ConfigManager.Instance.GetEditPlayerSettingsData ().projectData.m_strProductName,
-						"時刻になりました",
+						"時間だ！",
 						GetAssetName (reserve.m_iVoiceType, true)
 					);
 				}
